@@ -134,6 +134,7 @@ public class SignUpPage extends AppCompatActivity {
     }
 
     public void getValues() {
+        //just get the values
         fnames = fname.getText().toString().trim();
         lnames = lname.getText().toString().trim();
         adds = address.getText().toString().trim();
