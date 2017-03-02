@@ -12,7 +12,16 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,6 +34,17 @@ public class SignUpPage extends AppCompatActivity {
     boolean workerb, customerb;
     int year, month, day;
     Calendar calendar;
+
+    public static final String KEY_FNAME = "fname";
+    public static final String KEY_LNAME = "lname";
+    public static final String KEY_ADDRESS = "address";
+    public static final String KEY_EMAIL = "email";
+    public static final String KEY_DOB = "dob";
+    public static final String KEY_MOBILE = "mobile";
+    public static final String KEY_USER = "user";
+    public static final String KEY_PASS = "pass";
+
+    private static final String REGISTER_URL ="https://findproexpertcom.000webhostapp.com/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +72,7 @@ public class SignUpPage extends AppCompatActivity {
             public void onClick(View v) {
                 getValues();
                 if (validate()) {
+                    registerUser();
                     Toast.makeText(SignUpPage.this, "Account created successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUpPage.this, HomeScreen.class);
                     startActivity(intent);
@@ -68,16 +89,18 @@ public class SignUpPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        dob.setOnClickListener(new View.OnClickListener() {
+        dob.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onClick(View v) {
-                calendar = Calendar.getInstance();
-                year = calendar.get(Calendar.YEAR);
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    calendar = Calendar.getInstance();
+                    year = calendar.get(Calendar.YEAR);
 
-                month = calendar.get(Calendar.MONTH);
-                day = calendar.get(Calendar.DAY_OF_MONTH);
-                showDate(year, month+1, day);
-                showDialog(999);
+                    month = calendar.get(Calendar.MONTH);
+                    day = calendar.get(Calendar.DAY_OF_MONTH);
+                    showDate(year, month+1, day);
+                    showDialog(999);
+                }
             }
         });
     }
@@ -158,5 +181,39 @@ public class SignUpPage extends AppCompatActivity {
             return flag;
         }
         return flag;
+    }
+    public void registerUser(){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, REGISTER_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(SignUpPage.this,response,Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(SignUpPage.this,error.toString(),Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put(KEY_FNAME,fnames);
+                params.put(KEY_LNAME,lnames);
+                params.put(KEY_ADDRESS,adds);
+                params.put(KEY_EMAIL,emails);
+                params.put(KEY_DOB,dobs);
+                params.put(KEY_MOBILE,mobiles);
+                params.put(KEY_USER,users);
+                params.put(KEY_PASS,pass1s);
+                return params;
+            }
+
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 }
