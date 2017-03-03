@@ -1,4 +1,4 @@
-package com.example.com.findproexperttabbed;
+package com.example.com.findproexperttabbed.SplashScreen;
 
 
 import android.animation.AnimatorSet;
@@ -12,8 +12,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.example.com.findproexperttabbed.LoginScreen;
 import com.example.com.findproexperttabbed.R;
-import com.example.com.findproexperttabbed.KenBurnsView;
 
 public class SplashActivity extends Activity {
 

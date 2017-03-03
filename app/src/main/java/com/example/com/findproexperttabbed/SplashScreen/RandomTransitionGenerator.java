@@ -1,4 +1,4 @@
-package com.example.com.findproexperttabbed;
+package com.example.com.findproexperttabbed.SplashScreen;
 /*
 * Copyright 2014 Flavio Faria
 *

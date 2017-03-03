@@ -1,4 +1,4 @@
-package com.example.com.findproexperttabbed;
+package com.example.com.findproexperttabbed.SplashScreen;
 
 import android.content.Context;
 import android.content.res.TypedArray;

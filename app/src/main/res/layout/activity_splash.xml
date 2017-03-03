@@ -5,7 +5,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <com.example.com.findproexperttabbed.KenBurnsView
+    <com.example.com.findproexperttabbed.SplashScreen.KenBurnsView
         android:id="@+id/ken_burns_images"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -19,7 +19,7 @@
         android:layout_marginTop="106dp"
         android:src="@drawable/logo" />
 
-    <com.example.com.findproexperttabbed.RobotoTextView
+    <com.example.com.findproexperttabbed.SplashScreen.RobotoTextView
         android:id="@+id/welcome_text"
         style="@style/TextViewAppearance.Headline2"
         android:layout_width="wrap_content"
