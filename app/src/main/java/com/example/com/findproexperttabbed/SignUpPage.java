@@ -76,6 +76,7 @@ public class SignUpPage extends AppCompatActivity {
                     Toast.makeText(SignUpPage.this, "Account created successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUpPage.this, HomeScreen.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(SignUpPage.this, "Please enter proper credentials", Toast.LENGTH_SHORT).show();
                 }

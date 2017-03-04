@@ -3,246 +3,147 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.1.1_518f877690544985fd69379aaddeba0d8480c6cf.jar" />
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_3b3dc44769af02707e2c258d3bd1c5089d97af02.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_13582922466a384aafc78669467e29006de47be8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_185a4b5cc7127711f0d471b24107d720411ca47d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_5ef1c946162afbd637dce9757c707e4323ca305d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.1.1_cca57a6f5f3057bdf30fe88c5d20cea992c2955c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_75ddd656fed55e5417443752dadca1dd3be24453.jar" />
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_33920a5c9a39524cbef57d432770b9fd0e42135d.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_4574c311dcfa95a6a5ddf99e8cb3bac010aa6db5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_3b3d97e809317de1d83d3731de75e7503f5aa3cd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_5a59ff1d934ed6e25f4ecc9b4d36bc6ba1f3e1a7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_79fbd466775d8eab36c6d5208ef7bda4fb32b1e7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_2ace8e8d2516bb5a14e1b9775e2105834f771520.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.1.1_4c15dfdf2d1e7a83a42605698bb283444fb3d4ce.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_0d2f77468a9336b478def8419373c04b6f474b7b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_b6c9f1a249d8d02ef40b15d12d7bec90959a3ef3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_922694248d6d0c3f28556a594f4aa8d65d1c7477.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_dd8f04f93da2da32b1acc9b8d1d43bdbfcca532f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\jars\classes.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.mcxiaoke.volley-library-aar-1.0.0_a40c2c86b1aa758d8bb13c6efe04eab32f413fe0.jar" />
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.mcxiaoke.volley-library-aar-1.0.0_8e3c9f0f6563279b3ad6e53eac30ff47966564e3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_9bbee4183d114071aed6a8186e3dfd02c55e1ac3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_04cf5458a1536144c984f307d11b4e378fff1f7b.jar" />
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_114cb310aeb0075a93c40c53fdd9c74227beb833.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Amol\Android\AndroidIITB\64\adt-bundle-windows-x86_64-20131030\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_d3c814549a42297398258dc6355157b38041650f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.1.1_82c1de58186314b3b1960f535c81d4809e7c8b23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidSDKDownloads\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_82b2d3dea67effe6b93194c329d6760ba2512b9a.jar" />
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_597f2313c8a2e253393976643c33462da26298f4.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\jars\classes.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.mcxiaoke.volley-library-aar-1.0.0_87101ff950de8afecdc188ef5f8c77336286a1a4.jar" />
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_1f0c960c6885fffbe296b3be6dd40cd4aaace4c0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.1.1_25a70bf5bc28caf424b3a9486d4d0d6f8bb2f75e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_9f53539f8da853a16d2ec7b474f4807a0aaaf633.jar" />
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_3d7b3578dfbd013bf4862e237bbde9e6ffe9afb2.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.1.1_d5cf9c4703bfd10379c4da0da46180cfbef8366f.jar" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_992af96e3d61e23eb43e11891fe6c2811ef2ba48.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_009bc758742f6c8be5e8ccd01da4f3aeb6b20015.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpert-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_504526c684d6c995e5c32d877b0c7a06e437dac5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_e26ef5928fca5f179ee6d4d6d2a79770e45b9f08.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.1.1_6603d3ee3c86e92cfcf43011f6610a19f7b13749.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="C:\Users\HP\AndroidStudioProjects\FindProExpertTabbed\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.1.1_dc98a4bf6536cfb0beee39a94a64e5422f7326eb.jar" />
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.1.1_286f3c509e3b03c38ba079c76361cbc9e2c5ff8b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea9473b60294dd4bfa299f53970ba98ce0d7120f">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\instant-run_7b76e5779af8b4ec6a8629ef0dd01210960ca748.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9865508317b038c2a84917a876f9c96ba79cce09">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_6fe8de99a7822a1909a3fbcbd4d755300d383855.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="E:\AndroidProject\FindProExpert-app1\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_7ed15c106d312402e7453271b71e62ba71daa6d7.jar" />
     </item>
 
 </items>
