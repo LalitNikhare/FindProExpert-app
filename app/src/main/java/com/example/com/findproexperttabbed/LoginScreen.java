@@ -27,6 +27,7 @@ public class LoginScreen extends AppCompatActivity {
 
                 Intent it1=new Intent(LoginScreen.this,HomeScreen.class);
                 startActivity(it1);
+                finish();
 
             }
         });
@@ -37,6 +38,7 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it1=new Intent(LoginScreen.this,SignUpPage.class);
                 startActivity(it1);
+                finish();
             }
         });
     }
