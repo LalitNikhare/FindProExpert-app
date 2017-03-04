@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Settings" >
+        <Preference
+            android:title="Profile"
+            android:summary="Check Your Profile"
+            />
+        <Preference
+            android:title="Become Pro"
+            android:summary="Become a Pro"
+            />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Account Settings" >
+        <EditTextPreference
+            android:title="Password"
+            android:summary="Change Your Password"
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>
