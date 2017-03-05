@@ -8,6 +8,7 @@
         <Preference
             android:title="Become Pro"
             android:summary="Become a Pro"
+
             />
 
     </PreferenceCategory>
