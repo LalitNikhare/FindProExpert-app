@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,7 +27,8 @@ import static android.R.attr.password;
 public class LoginScreen extends AppCompatActivity {
 
     EditText user,pass;
-    Button login,cancel;
+    Button login;
+    TextView cancel;
     public boolean loggedIn=false;
 
     @Override
@@ -37,7 +39,7 @@ public class LoginScreen extends AppCompatActivity {
         user= (EditText) findViewById(R.id.user);
         pass= (EditText) findViewById(R.id.pass);
         login=(Button)findViewById(R.id.login_button2);
-        cancel=(Button)findViewById(R.id.cancel_button1);
+        cancel=(TextView) findViewById(R.id.cancel_button1);
 
         //place checking conditions here --LOGIN
         login.setOnClickListener(new View.OnClickListener() {

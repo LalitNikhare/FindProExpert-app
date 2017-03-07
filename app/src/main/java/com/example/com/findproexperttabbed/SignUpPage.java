@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -27,7 +28,8 @@ import java.util.regex.Pattern;
 
 public class SignUpPage extends AppCompatActivity {
 
-    Button makeAccount, cancel;
+    Button makeAccount;
+    TextView cancel;
     CheckBox worker, customer;
     EditText fname, lname, address, email, dob, mobile, user, pass1, pass2;
     String fnames, lnames, adds, emails, dobs, mobiles, users, pass1s, pass2s;
@@ -52,7 +54,7 @@ public class SignUpPage extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_page);
 
         makeAccount = (Button) findViewById(R.id.make_account);
-        cancel = (Button) findViewById(R.id.cancel_button2);
+        cancel = (TextView) findViewById(R.id.cancel_button2);
         fname = (EditText) findViewById(R.id.detail_fname);
         lname = (EditText) findViewById(R.id.detail_lname);
         address = (EditText) findViewById(R.id.detail_address);

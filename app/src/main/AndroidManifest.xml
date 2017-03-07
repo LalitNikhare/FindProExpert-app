@@ -32,7 +32,7 @@
         <activity
             android:name=".LoginScreen"
             android:label="FindProExpertT"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.Dark">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +41,8 @@
         </activity>
         <activity
             android:name=".SignUpPage"
-            android:label="FindProExpert" />
+            android:label="FindProExpert"
+            android:theme="@style/AppTheme.Dark"/>
         <activity
             android:name=".HomeScreen"
             android:label="FindProExpert"
