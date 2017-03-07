@@ -5,7 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +36,6 @@ public class ProfessionalView extends Fragment {
     ListView request_list;
     ProgressDialog progressDialog;
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.professional_fragment, container, false);
