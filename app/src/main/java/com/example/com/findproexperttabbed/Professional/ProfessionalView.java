@@ -66,7 +66,6 @@ public class ProfessionalView extends Fragment {
                     }
                 });
 //        {
-
 //            @Override
 //            protected Map<String, String> getParams() {
 //                HashMap<String ,String> params=new HashMap<String, String>();
