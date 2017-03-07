@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Settings" >
+    <PreferenceCategory android:title="Settings">
         <Preference
-            android:title="Profile"
             android:summary="Check Your Profile"
-            />
-        <Preference
-            android:title="Become Pro"
-            android:summary="Become a Pro"
+            android:title="Profile" />
 
-            />
+        <Preference
+            android:summary="Become a Pro"
+            android:title="Become Pro">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="com.example.com.findproexperttabbed.BecomeAProActivity"
+                android:targetPackage="com.example.com.findproexperttabbed" />
+        </Preference>
+
 
     </PreferenceCategory>
-    <PreferenceCategory android:title="Account Settings" >
+    <PreferenceCategory android:title="Account Settings">
         <EditTextPreference
-            android:title="Password"
             android:summary="Change Your Password"
-            />
+            android:title="Password" />
     </PreferenceCategory>
 
 </PreferenceScreen>

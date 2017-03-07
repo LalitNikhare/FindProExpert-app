@@ -2,6 +2,8 @@ package com.example.com.findproexperttabbed.Professional;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,8 +19,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.com.findproexperttabbed.Config;
 import com.example.com.findproexperttabbed.JSONProfessional;
 import com.example.com.findproexperttabbed.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.example.com.findproexperttabbed.Customer.CustomerView.JSON_URL;
 
@@ -41,7 +47,8 @@ public class ProfessionalView extends Fragment {
         return view;
     }
     private void sendRequest() {
-
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
         StringRequest stringRequest = new StringRequest(Request.Method.POST, JSON_URL,
                 new Response.Listener<String>() {
                     @Override
@@ -58,6 +65,15 @@ public class ProfessionalView extends Fragment {
 //                        Toast.makeText(getActivity().getApplicationContext(), "Error in network " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
+//        {
+//            @Override
+//            protected Map<String, String> getParams() {
+//                HashMap<String ,String> params=new HashMap<String, String>();
+//                params.put("username",username);
+//                return params;
+//            }
+//
+//        };
 
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         requestQueue.add(stringRequest);
