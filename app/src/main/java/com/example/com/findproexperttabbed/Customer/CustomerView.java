@@ -31,6 +31,7 @@ public class CustomerView extends Fragment {
     ListView pro_list;
     View view;
     ProgressDialog progressDialog;
+    int image[]={R.drawable.webdev,R.drawable.appdev,R.drawable.mobdev,R.drawable.photography,R.drawable.videdit,R.drawable.graphicsandanimation};
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -102,7 +103,7 @@ public class CustomerView extends Fragment {
 //        }
 
         try {
-            SeeProfessions cl = new SeeProfessions(getActivity(), JSONProfessional.names, JSONProfessional.desc, JSONProfessional.worker);
+            SeeProfessions cl = new SeeProfessions(getActivity(),image, JSONProfessional.names, JSONProfessional.desc, JSONProfessional.worker);
             pro_list.setAdapter(cl);
         } catch (Exception e) {
             Log.d("Error", "Error in HomeActivity customer fragment custom adapter");

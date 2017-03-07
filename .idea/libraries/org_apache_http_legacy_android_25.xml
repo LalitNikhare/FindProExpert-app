@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="org.apache.http.legacy-android-25">
     <CLASSES>
-      <root url="jar://E:/AndroidSDKDownloads/platforms/android-25/optional/org.apache.http.legacy.jar!/" />
+      <root url="jar://D:/Amol/Android/AndroidIITB/64/adt-bundle-windows-x86_64-20131030/sdk/platforms/android-25/optional/org.apache.http.legacy.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

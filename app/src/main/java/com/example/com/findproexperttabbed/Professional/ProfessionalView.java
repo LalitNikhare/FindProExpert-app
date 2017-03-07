@@ -2,6 +2,7 @@ package com.example.com.findproexperttabbed.Professional;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -19,6 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.com.findproexperttabbed.JSONProfessional;
 import com.example.com.findproexperttabbed.R;
+import com.example.com.findproexperttabbed.ViewRequestActivity;
 
 import static com.example.com.findproexperttabbed.Customer.CustomerView.JSON_URL;
 
@@ -38,6 +41,13 @@ public class ProfessionalView extends Fragment {
         view=inflater.inflate(R.layout.professional_fragment, container, false);
         request_list= (ListView) view.findViewById(R.id.request_list2);
         sendRequest();
+        request_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent=new Intent(getActivity(),ViewRequestActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
     private void sendRequest() {
