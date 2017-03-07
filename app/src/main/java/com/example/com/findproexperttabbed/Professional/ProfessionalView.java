@@ -2,8 +2,7 @@ package com.example.com.findproexperttabbed.Professional;
 
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -19,12 +19,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.com.findproexperttabbed.Config;
 import com.example.com.findproexperttabbed.JSONProfessional;
 import com.example.com.findproexperttabbed.R;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.example.com.findproexperttabbed.ViewRequestActivity;
 
 import static com.example.com.findproexperttabbed.Customer.CustomerView.JSON_URL;
 
@@ -38,17 +35,24 @@ public class ProfessionalView extends Fragment {
     public static final String JSON_URL = "https://findproexpertcom.000webhostapp.com/fetch_requests.php";
     ListView request_list;
     ProgressDialog progressDialog;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.professional_fragment, container, false);
         request_list= (ListView) view.findViewById(R.id.request_list2);
         sendRequest();
+        request_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent=new Intent(getActivity(),ViewRequestActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
     private void sendRequest() {
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, JSON_URL,
                 new Response.Listener<String>() {
                     @Override
@@ -65,15 +69,6 @@ public class ProfessionalView extends Fragment {
 //                        Toast.makeText(getActivity().getApplicationContext(), "Error in network " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
-//        {
-//            @Override
-//            protected Map<String, String> getParams() {
-//                HashMap<String ,String> params=new HashMap<String, String>();
-//                params.put("username",username);
-//                return params;
-//            }
-//
-//        };
 
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         requestQueue.add(stringRequest);

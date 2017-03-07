@@ -47,8 +47,9 @@
             android:label="FindProExpert"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SettingsPref" />
-        <activity android:name=".BecomeAProActivity" />
-
+        <activity android:name=".ViewRequestActivity" />
+        <activity android:name=".BecomeAProActivity"></activity>
+        <!--<activity android:name=".ViewRequestAdapter"></activity>-->
     </application>
 
 </manifest>

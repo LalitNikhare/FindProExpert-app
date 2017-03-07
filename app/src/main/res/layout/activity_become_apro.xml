@@ -17,7 +17,9 @@
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/become_a_pro_list" />
+        android:id="@+id/become_a_pro_list"
+
+        android:background="@drawable/splash_background"/>
 
     <LinearLayout
         android:orientation="horizontal"
