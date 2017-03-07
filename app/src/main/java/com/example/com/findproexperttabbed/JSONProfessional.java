@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class JSONProfessional {
+    public static String[] prof;
     public static String[] desc;
     public static String[] names;
     public static int[] worker;
@@ -42,12 +43,14 @@ public class JSONProfessional {
             desc = new String[users.length()];
             names = new String[users.length()];
             worker = new int[users.length()];
+            prof=new String[users.length()];
 
             for (int i = 0; i < users.length(); i++) {
                 JSONObject jo = users.getJSONObject(i);
                 desc[i] = jo.getString(KEY_DESC);
                 names[i] = jo.getString(KEY_NAME);
                 worker[i] = Integer.parseInt(jo.getString(KEY_WORKER));
+                prof[i]=jo.getString(KEY_NAME);
 //                names_list.add(jo.getString(KEY_NAME));
 //                desc_list.add(jo.getString(KEY_DESC));
 //                worker_list.add(Integer.parseInt(jo.getString(KEY_WORKER)));

@@ -35,6 +35,7 @@ public class ProfessionalView extends Fragment {
     public static final String JSON_URL = "https://findproexpertcom.000webhostapp.com/fetch_requests.php";
     ListView request_list;
     ProgressDialog progressDialog;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
