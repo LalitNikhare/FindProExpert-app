@@ -100,7 +100,7 @@ public class ProfessionalView extends Fragment {
 //        }
 
         try {
-            SeeRequests cl = new SeeRequests(getActivity(), JSONProfessional.names, JSONProfessional.desc, JSONProfessional.request);
+            SeeRequests cl = new SeeRequests(getActivity(), JSONProfessional.names, JSONProfessional.desc, JSONProfessional.request,JSONProfessional.srno);
             request_list.setAdapter(cl);
         } catch (Exception e) {
             Log.d("Error", "Error in HomeActivity customer fragment custom adapter");
