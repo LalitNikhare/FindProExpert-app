@@ -129,6 +129,7 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
         dialog.show();
+        //finish();
     }
 
     @Override
@@ -149,6 +150,7 @@ public class HomeScreen extends AppCompatActivity {
         if (id == R.id.action_settings) {
             Intent settingsIntent=new Intent(HomeScreen.this,SettingsPref.class);
             startActivity(settingsIntent);
+            finish();
             return true;
         }
         if (id == R.id.action_logout) {

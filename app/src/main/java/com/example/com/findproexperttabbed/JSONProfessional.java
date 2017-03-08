@@ -96,10 +96,12 @@ public class JSONProfessional {
             jsonObject = new JSONObject(json);
             users = jsonObject.getJSONArray(JSON_ARRAY);
             view_request = new String[users.length()];
+            srno=new int[users.length()];
 
             for (int i = 0; i < users.length(); i++) {
                 JSONObject jo = users.getJSONObject(i);
                 view_request[i] = jo.getString(KEY_VIEW_REQUEST);
+                srno[i]= Integer.parseInt(jo.getString(KEY_SRNO));
             }
         } catch (JSONException e) {
             Log.d("Error", "Bug in JSONProfessional");

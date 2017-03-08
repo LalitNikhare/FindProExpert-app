@@ -47,9 +47,10 @@
             android:name=".HomeScreen"
             android:label="FindProExpert"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SettingsPref" />
-        <activity android:name=".Professional.ViewRequests.ViewRequestActivity" />
-        <activity android:name=".BecomeAProActivity"></activity>
+        <activity android:name=".SettingsPref" android:label="Settings" />
+        <activity android:name=".Professional.ViewRequests.ViewRequestActivity"
+            android:label="View Requests"/>
+        <activity android:name=".BecomeAProActivity" android:label="Add Skills"></activity>
         <!--<activity android:name=".ViewRequestAdapter"></activity>-->
     </application>
 

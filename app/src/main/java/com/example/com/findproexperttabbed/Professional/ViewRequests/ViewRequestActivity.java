@@ -29,7 +29,6 @@ public class ViewRequestActivity extends AppCompatActivity {
 
     private static final String VIEW_REQUESTS_URL = "https://findproexpertcom.000webhostapp.com/fetch_view_requests.php";
     private static final String DOMAIN = "domain";
-    private static final String USERNAME = "username";
     ListView mylist;
     String username,domain;
     ProgressDialog progressDialog;
@@ -44,6 +43,13 @@ public class ViewRequestActivity extends AppCompatActivity {
 
         fetchRequests();
 
+        mylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(ViewRequestActivity.this,""+mylist.getSelectedItemPosition(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     private void fetchRequests(){
@@ -54,8 +60,8 @@ public class ViewRequestActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         viewFetchedRequests(response);
+                        //Toast.makeText(ViewRequestActivity.this,""+response,Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
-                        //Toast.makeText(ViewRequestActivity.this, response, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -67,7 +73,6 @@ public class ViewRequestActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 HashMap<String ,String> params=new HashMap<String, String>();
-//                params.put(USERNAME,username);
                 params.put(DOMAIN,domain);
                 return params;
             }
@@ -83,7 +88,12 @@ public class ViewRequestActivity extends AppCompatActivity {
     public void viewFetchedRequests(String response){
         JSONProfessional jsonProfessional=new JSONProfessional(response);
         jsonProfessional.parseJSONforViewRequest();
-        ViewRequestAdapter cl=new ViewRequestAdapter(ViewRequestActivity.this, JSONProfessional.view_request);
-        mylist.setAdapter(cl);
+        try{
+            ViewRequestAdapter cl=new ViewRequestAdapter(ViewRequestActivity.this, JSONProfessional.view_request);
+            mylist.setAdapter(cl);
+        }catch(Exception e){
+
+        }
+
     }
 }

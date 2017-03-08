@@ -49,10 +49,8 @@ public class SeeProfessions extends ArrayAdapter<String> {
             convertView = inflater
                     .inflate(R.layout.profession_custom_list, parent, false);
             holder.name1 = (TextView) convertView.findViewById(R.id.profession_name);
-            holder.desc1 = (TextView) convertView
-                    .findViewById(R.id.profession_desc);
-            holder.worker1 = (TextView) convertView
-                    .findViewById(R.id.worker_count);
+            holder.desc1 = (TextView) convertView.findViewById(R.id.profession_desc);
+            holder.worker1 = (TextView) convertView.findViewById(R.id.worker_count);
             holder.img= (ImageView) convertView.findViewById(R.id.profession_image);
             convertView.setTag(holder);
 

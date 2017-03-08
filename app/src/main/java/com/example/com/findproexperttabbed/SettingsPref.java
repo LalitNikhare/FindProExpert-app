@@ -1,6 +1,7 @@
 package com.example.com.findproexperttabbed;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,15 @@ public class SettingsPref extends AppCompatActivity {
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(SettingsPref.this,HomeScreen.class);
+        startActivity(intent);
+        finish();
+    }
+
     public static class MyPreferenceFragment extends PreferenceFragment
     {
         @Override
