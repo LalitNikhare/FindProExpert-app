@@ -11,9 +11,9 @@
     <color name="global_color_green_control_activated">#ffc107</color>
 
 
-    <color name="primary">#E43F3F</color>
-    <color name="primary_dark">#E12929</color>
-    <color name="primary_darker">#CC1D1D</color>
+    <color name="primary">#0c9c73</color>
+    <color name="primary_dark">#0b8864</color>
+    <color name="primary_darker">#097556</color>
     <color name="accent">#FFFFFF</color>
 
     <color name="black">#000000</color>

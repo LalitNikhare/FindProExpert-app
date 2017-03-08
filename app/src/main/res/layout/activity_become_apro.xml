@@ -13,13 +13,13 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="428dp"
+        android:layout_height="521dp"
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/become_a_pro_list"
 
-        android:background="@drawable/splash_background"/>
+        android:background="@drawable/bp_background"/>
 
     <LinearLayout
         android:orientation="horizontal"
