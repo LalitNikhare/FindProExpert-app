@@ -41,14 +41,12 @@
             android:id="@+id/profile_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_below="@+id/header_cover_image"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:background="#4a235a"
             android:elevation="4dp"
-            android:paddingBottom="24dp">
+            android:paddingBottom="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
 
 
             <!--<ImageView-->
