@@ -39,7 +39,7 @@ public class BecomeAProActivity extends AppCompatActivity {
         add = (Button) findViewById(R.id.become_a_pro_accept);
         reject = (Button) findViewById(R.id.become_a_pro_reject);
         mylist = (ListView) findViewById(R.id.become_a_pro_list);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(BecomeAProActivity.this, android.R.layout.simple_list_item_checked);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(BecomeAProActivity.this, android.R.layout.simple_list_item_multiple_choice);
         adapter.addAll(JSONProfessional.prof);
         mylist.setAdapter(adapter);
 //        public void onListItemClick(ListView parent, View v,int position,long id){
