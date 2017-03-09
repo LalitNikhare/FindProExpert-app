@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minHeight="150dp"
+    android:minWidth="300dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Request"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
     <EditText
         android:id="@+id/customer_request"
@@ -18,24 +28,29 @@
         android:layout_marginTop="20dp" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:textAlignment="gravity">
 
         <Button
-            android:text="Confirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/request_confirm"
-            android:layout_weight="1" />
-
-        <Button
-            android:text="Cancel"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:lineSpacingExtra="14sp"
+            android:text="Confirm"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:textStyle="bold" />
+
+        <Button
             android:id="@+id/request_cancel"
-            android:layout_weight="1" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel" />
     </LinearLayout>
 
 </LinearLayout>
