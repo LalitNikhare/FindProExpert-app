@@ -3,7 +3,12 @@
     <PreferenceCategory android:title="General">
         <Preference
             android:summary="Check Your Profile"
-            android:title="Profile" />
+            android:title="Profile" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="com.example.com.findproexperttabbed.ProfileActivity"
+                android:targetPackage="com.example.com.findproexperttabbed" />
+            </Preference>
 
         <Preference
             android:summary="Become a Pro"

@@ -26,4 +26,11 @@
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
 
+    <color name="primary_text">#FFFFFF</color>
+    <color name="divider">#FFFFFF</color>
+
+    <color name="dark">#FF222222</color>
+    <color name="light">#FFEEEEEE</color>
+
+
 </resources>

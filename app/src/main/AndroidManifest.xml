@@ -51,6 +51,7 @@
         <activity android:name=".Professional.ViewRequests.ViewRequestActivity"
             android:label="View Requests"/>
         <activity android:name=".BecomeAProActivity" android:label="Add Skills"></activity>
+        <activity android:name=".ProfileActivity" android:label="Profile"></activity>
         <!--<activity android:name=".ViewRequestAdapter"></activity>-->
     </application>
 

@@ -17,9 +17,17 @@ public class JSONProfessional {
     public static String[] desc;
     public static String[] names;
     public static String[] view_request;
+    public static String[] view_request_prof;
+    public static String[] view_request_prof2;
     public static int[] worker;
     public static int[] request;
     public static int[] srno;
+    public static String profile_fname;
+    public static String profile_lname;
+    public static String profile_email;
+    public static String profile_mobile;
+    public static String profile_username;
+    public static String profile_profession_name;
 
     public static final String JSON_ARRAY = "result";
     public static final String KEY_DESC = "profession_desc";
@@ -27,6 +35,7 @@ public class JSONProfessional {
     public static final String KEY_WORKER = "worker";
     public static final String KEY_REQUEST = "request";
     public static final String KEY_VIEW_REQUEST = "view_request";
+    //public static  final String JSON_ARRAY_PROF="result2";
 
     private JSONArray users = null;
     private String json;
@@ -103,6 +112,32 @@ public class JSONProfessional {
                 view_request[i] = jo.getString(KEY_VIEW_REQUEST);
                 srno[i]= Integer.parseInt(jo.getString(KEY_SRNO));
             }
+        } catch (JSONException e) {
+            Log.d("Error", "Bug in JSONProfessional");
+            e.printStackTrace();
+        }
+    }
+    public void parseJSONforProfileDetails(){
+        JSONObject jsonObject;
+        try {
+
+            jsonObject = new JSONObject(json);
+            users = jsonObject.getJSONArray(JSON_ARRAY);
+            //view_request = new String[users.length()];
+            //srno=new int[users.length()];
+
+            for (int i = 0; i < users.length(); i++) {
+                JSONObject jo = users.getJSONObject(i);
+                //view_request_prof[i] = jo.getString(KEY_VIEW_REQUEST);
+                //srno[i]= Integer.parseInt(jo.getString(KEY_SRNO));
+                profile_fname= jo.getString("first_name");
+                profile_lname= jo.getString("last_name");
+                profile_email= jo.getString("email");
+                profile_mobile= jo.getString("mobile");
+            }
+
+
+
         } catch (JSONException e) {
             Log.d("Error", "Bug in JSONProfessional");
             e.printStackTrace();
