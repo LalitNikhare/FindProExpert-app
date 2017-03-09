@@ -41,15 +41,15 @@ public class CustomerView extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Dialog dialog2 = new Dialog(getActivity());
-                dialog2.setTitle("Generate A Request?");
-
                 dialog2.setContentView(R.layout.dialog_for_customer);
+              //  dialog2.setTitle("Generate A Request?");
                 Button confirm,cancel;
                 Spinner category;
                 dialog2.setCancelable(false);
+//                dialog2.create();
                 confirm = (Button) dialog2.findViewById(R.id.request_confirm);
                 cancel = (Button) dialog2.findViewById(R.id.request_cancel);
-                category= (Spinner) dialog2.findViewById(R.id.request_category);
+                //category= (Spinner) dialog2.findViewById(R.id.request_category);
                 confirm.setOnClickListener(new View.OnClickListener() {
 
                     @Override
