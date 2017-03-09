@@ -1,12 +1,11 @@
 package com.example.com.findproexperttabbed;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ListView;
+
+import com.example.com.findproexperttabbed.HomeScreen.HomeScreen;
 
 public class SettingsPref extends AppCompatActivity {
 

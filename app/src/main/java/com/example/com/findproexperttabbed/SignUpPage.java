@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.com.findproexperttabbed.HomeScreen.HomeScreen;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -75,8 +76,8 @@ public class SignUpPage extends AppCompatActivity {
                 getValues();
                 if (validate()) {
                     registerUser();
-                    Toast.makeText(SignUpPage.this, "Account created successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignUpPage.this, HomeScreen.class);
+                    //Toast.makeText(SignUpPage.this, "Account created successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignUpPage.this, LoginScreen.class);
                     startActivity(intent);
                     finish();
                 } else {
@@ -187,7 +188,6 @@ public class SignUpPage extends AppCompatActivity {
         return flag;
     }
     public void registerUser(){
-
         StringRequest stringRequest = new StringRequest(Request.Method.POST, REGISTER_URL,
                 new Response.Listener<String>() {
                     @Override

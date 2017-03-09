@@ -66,13 +66,17 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void setDetails(String response) {
+        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+
         JSONProfessional jsonProfessional=new JSONProfessional(response);
         jsonProfessional.parseJSONforProfileDetails();
        // Toast.makeText(this,""+JSONProfessional.profile_fname,)
-       user_profile_name.setText(""+JSONProfessional.profile_fname+" "+JSONProfessional.profile_lname);
+
+        user_profile_name.setText(""+JSONProfessional.profile_fname+" "+JSONProfessional.profile_lname);
        text_view_mobno.setText("Mobile: "+JSONProfessional.profile_mobile);
        text_view_email.setText("Email: "+JSONProfessional.profile_email);
        text_view_skills.setText("Still Learning new skills.......");
-       user_profile_username.setText("Username:");
+       user_profile_username.setText(JSONProfessional.profile_username);
     }
 }

@@ -134,6 +134,7 @@ public class JSONProfessional {
                 profile_lname= jo.getString("last_name");
                 profile_email= jo.getString("email");
                 profile_mobile= jo.getString("mobile");
+                profile_username= jo.getString("username");
             }
 
 

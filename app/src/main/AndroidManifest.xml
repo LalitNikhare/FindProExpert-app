@@ -44,11 +44,11 @@
             android:label="FindProExpert"
             android:theme="@style/AppTheme.Dark"/>
         <activity
-            android:name=".HomeScreen"
+            android:name=".HomeScreen.HomeScreen"
             android:label="FindProExpert"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SettingsPref" android:label="Settings" />
-        <activity android:name=".Professional.ViewRequests.ViewRequestActivity"
+        <activity android:name=".HomeScreen.Professional.ViewRequests.ViewRequestActivity"
             android:label="View Requests"/>
         <activity android:name=".BecomeAProActivity" android:label="Add Skills"></activity>
         <activity android:name=".ProfileActivity" android:label="Profile"></activity>

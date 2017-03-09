@@ -85,10 +85,10 @@
                 android:layout_below="@+id/user_profile_name"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="12dp"
-                android:text="Android free tutorials and example"
+                android:text="username"
                 android:textColor="#fff"
                 android:textSize="14sp"
-                tools:text="Status" />
+                 />
 
         </RelativeLayout>
 
