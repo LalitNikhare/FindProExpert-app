@@ -1,5 +1,6 @@
 package com.example.com.findproexperttabbed;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -20,11 +21,16 @@ import java.util.Map;
 public class ProfileActivity extends AppCompatActivity {
     private static final String VIEW_PROFILE_URL = "https://findproexpertcom.000webhostapp.com/profile_data_fetch.php";
     TextView user_profile_name,text_view_mobno,text_view_email,text_view_skills,user_profile_username;
+    ProgressDialog progDiag;
     private static final String USERNAME = "username";
+
    // public static final String  = "https://findproexpertcom.000webhostapp.com/profile_data_fetch.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        progDiag = new ProgressDialog(ProfileActivity.this);
+        progDiag.setMessage("Reading Response from server...");
+        progDiag.show();
         setContentView(R.layout.activity_profile);
         user_profile_name=(TextView)findViewById(R.id.user_profile_name);
         text_view_mobno=(TextView)findViewById(R.id.text_view_mobno);
@@ -42,8 +48,9 @@ public class ProfileActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(ProfileActivity.this, response, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(ProfileActivity.this, response, Toast.LENGTH_LONG).show();
                         setDetails(response);
+                        progDiag.dismiss();
                     }
                 },
                 new Response.ErrorListener() {
@@ -63,6 +70,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+//        progDiag = new ProgressDialog(ProfileActivity.this);
+//        progDiag.setMessage("Reading Response from server...");
+//        progDiag.show();
     }
 
     private void setDetails(String response) {

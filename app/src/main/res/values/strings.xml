@@ -3,4 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="happy_to_serve">Happy to serve!!</string>
+    <string name="title_activity_notification_home">NotificationHomeActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

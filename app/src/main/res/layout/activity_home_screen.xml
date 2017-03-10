@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_home"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -32,11 +32,25 @@
 
     </android.support.design.widget.AppBarLayout>
 
+
+
     <android.support.v4.view.ViewPager
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|left"
+        android:layout_margin="16dp"
+        android:layout_marginTop="00dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_anchor="@+id/container"
+        app:layout_anchorGravity="bottom|right|center_vertical"
+        app:srcCompat="@drawable/fabnotificationicon" />
 
 </android.support.design.widget.CoordinatorLayout>

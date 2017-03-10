@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +28,7 @@ import com.example.com.findproexperttabbed.Config;
 import com.example.com.findproexperttabbed.HomeScreen.Customer.CustomerView;
 import com.example.com.findproexperttabbed.LoginScreen;
 import com.example.com.findproexperttabbed.HomeScreen.Professional.ProfessionalView;
+import com.example.com.findproexperttabbed.Notification.NotificationHomeActivity;
 import com.example.com.findproexperttabbed.R;
 import com.example.com.findproexperttabbed.SettingsPref;
 
@@ -40,7 +43,7 @@ public class HomeScreen extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
+    FloatingActionButton fab;
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -51,10 +54,11 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
+        //fab=(FloatingActionButton)findViewById(R.id.fabNotification);
         SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -67,6 +71,23 @@ public class HomeScreen extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent in=new Intent(HomeScreen.this, NotificationHomeActivity.class);
+//                startActivity(in);
+//            }
+//        });
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabNotification);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent in=new Intent(HomeScreen.this, NotificationHomeActivity.class);
+                startActivity(in);
+            }
+        });
 
 
     }
@@ -161,6 +182,12 @@ public class HomeScreen extends AppCompatActivity {
 //            Intent settingsIntent=new Intent(HomeScreen.this,SettingsPref.class);
 //            startActivity(settingsIntent);
             logout();
+            return true;
+        }
+        if (id == R.id.action_notification) {
+            Intent notiIntent=new Intent(HomeScreen.this,NotificationHomeActivity.class);
+            startActivity(notiIntent);
+
             return true;
         }
 

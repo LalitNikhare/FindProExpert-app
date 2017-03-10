@@ -8,8 +8,14 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_notification"
+        android:orderInCategory="100"
+        android:title="Notifications"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_logout"
         android:orderInCategory="100"
         android:title="Logout"
         app:showAsAction="never" />
+
 </menu>
