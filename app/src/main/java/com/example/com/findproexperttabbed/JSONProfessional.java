@@ -27,7 +27,7 @@ public class JSONProfessional {
     public static String profile_email;
     public static String profile_mobile;
     public static String profile_username;
-    public static String profile_profession_name;
+    public static String[] profile_skills;
 
     public static final String JSON_ARRAY = "result";
     public static final String KEY_DESC = "profession_desc";
@@ -145,6 +145,35 @@ public class JSONProfessional {
         }
     }
 
+    public void parseJSONforProfileSkillDetails(){
+        JSONObject jsonObject;
+        try {
+
+            jsonObject = new JSONObject(json);
+            users = jsonObject.getJSONArray(JSON_ARRAY);
+            //view_request = new String[users.length()];
+            profile_skills=new String[users.length()];
+
+            for (int i = 0; i < users.length(); i++) {
+                JSONObject jo = users.getJSONObject(i);
+                //view_request_prof[i] = jo.getString(KEY_VIEW_REQUEST);
+                //srno[i]= Integer.parseInt(jo.getString(KEY_SRNO));
+//                profile_fname= jo.getString("first_name");
+//                profile_lname= jo.getString("last_name");
+//                profile_email= jo.getString("email");
+//                profile_mobile= jo.getString("mobile");
+//                profile_username= jo.getString("username");
+                  profile_skills[i]=jo.getString("profession_name");
+
+            }
+
+
+
+        } catch (JSONException e) {
+            Log.d("Error", "Bug in JSONProfessional");
+            e.printStackTrace();
+        }
+    }
 
 }
 

@@ -20,6 +20,7 @@ import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity {
     private static final String VIEW_PROFILE_URL = "https://findproexpertcom.000webhostapp.com/profile_data_fetch.php";
+    private static final String VIEW_PROFILESKILL_URL = "https://findproexpertcom.000webhostapp.com/skill_fetch.php";
     TextView user_profile_name,text_view_mobno,text_view_email,text_view_skills,user_profile_username;
     ProgressDialog progDiag;
     private static final String USERNAME = "username";
@@ -39,6 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
         user_profile_username=(TextView)findViewById(R.id.user_profile_username);
 
         placeDetailRequest();
+
     }
 
     public void placeDetailRequest() {
@@ -66,10 +68,45 @@ public class ProfileActivity extends AppCompatActivity {
                 return params;
             }
 
+
         };
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+//        progDiag = new ProgressDialog(ProfileActivity.this);
+//        progDiag.setMessage("Reading Response from server...");
+//        progDiag.show();
+    }
+    public void placeSkillRequest() {
+        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, VIEW_PROFILESKILL_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response1) {
+                        Toast.makeText(ProfileActivity.this, response1, Toast.LENGTH_LONG).show();
+                        setSkills(response1);
+                        //progDiag.dismiss();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(ProfileActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                HashMap<String ,String> params=new HashMap<String, String>();
+                params.put("username",username);
+                return params;
+            }
+
+
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest1);
 //        progDiag = new ProgressDialog(ProfileActivity.this);
 //        progDiag.setMessage("Reading Response from server...");
 //        progDiag.show();
@@ -81,12 +118,29 @@ public class ProfileActivity extends AppCompatActivity {
 
         JSONProfessional jsonProfessional=new JSONProfessional(response);
         jsonProfessional.parseJSONforProfileDetails();
-       // Toast.makeText(this,""+JSONProfessional.profile_fname,)
+
+        // Toast.makeText(this,""+JSONProfessional.profile_fname,)
 
         user_profile_name.setText(""+JSONProfessional.profile_fname+" "+JSONProfessional.profile_lname);
-       text_view_mobno.setText("Mobile: "+JSONProfessional.profile_mobile);
-       text_view_email.setText("Email: "+JSONProfessional.profile_email);
-       text_view_skills.setText("Still Learning new skills.......");
-       user_profile_username.setText(JSONProfessional.profile_username);
+        text_view_mobno.setText("Mobile: "+JSONProfessional.profile_mobile);
+        text_view_email.setText("Email: "+JSONProfessional.profile_email);
+        text_view_skills.setText("Still Learning new skills.......");
+        user_profile_username.setText(JSONProfessional.profile_username);
+        placeSkillRequest();
+
+    }
+
+    private void setSkills(String response) {
+
+        JSONProfessional jsonProfessionalSkills=new JSONProfessional(response);
+        jsonProfessionalSkills.parseJSONforProfileSkillDetails();
+
+        String prof="";
+
+        for(int i=0;i<JSONProfessional.profile_skills.length;i++){
+            Toast.makeText(this,""+JSONProfessional.profile_skills[i],Toast.LENGTH_SHORT).show();
+            prof+=""+(i+1)+"."+JSONProfessional.profile_skills[i]+"\n";
+        }
+        text_view_skills.setText(""+prof);
     }
 }
