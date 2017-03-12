@@ -59,7 +59,7 @@ public class ViewRequestActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         viewFetchedRequests(response);
-                        //Toast.makeText(ViewRequestActivity.this,""+response,Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(ViewRequestActivity.this,""+response,Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                     }
                 },
@@ -88,7 +88,7 @@ public class ViewRequestActivity extends AppCompatActivity {
         JSONProfessional jsonProfessional=new JSONProfessional(response);
         jsonProfessional.parseJSONforViewRequest();
         try{
-            ViewRequestAdapter cl=new ViewRequestAdapter(ViewRequestActivity.this, JSONProfessional.view_request);
+            ViewRequestAdapter cl=new ViewRequestAdapter(ViewRequestActivity.this, JSONProfessional.view_request,JSONProfessional.cust_username);
             mylist.setAdapter(cl);
         }catch(Exception e){
 

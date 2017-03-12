@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    tools:context="com.example.com.findproexperttabbed.Notification.NotForCustAdapter"
+    tools:context="com.example.com.findproexperttabbed.Notification.Customer.NotForCustAdapter"
     android:orientation="vertical">
 
     <TextView

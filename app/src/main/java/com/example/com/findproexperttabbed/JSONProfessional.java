@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 public class JSONProfessional {
     private static final String KEY_SRNO = "srno";
+    private static final String KEY_CUST_USERNAME = "username";
     public static String[] prof;
     public static String[] desc;
     public static String[] names;
@@ -22,6 +23,8 @@ public class JSONProfessional {
     public static int[] worker;
     public static int[] request;
     public static int[] srno;
+    public static String[] cust_username;
+
     public static String profile_fname;
     public static String profile_lname;
     public static String profile_email;
@@ -106,10 +109,12 @@ public class JSONProfessional {
             users = jsonObject.getJSONArray(JSON_ARRAY);
             view_request = new String[users.length()];
             srno=new int[users.length()];
+            cust_username=new String[users.length()];
 
             for (int i = 0; i < users.length(); i++) {
                 JSONObject jo = users.getJSONObject(i);
                 view_request[i] = jo.getString(KEY_VIEW_REQUEST);
+                cust_username[i]=jo.getString(KEY_CUST_USERNAME);
                 srno[i]= Integer.parseInt(jo.getString(KEY_SRNO));
             }
         } catch (JSONException e) {

@@ -36,15 +36,24 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
     private static final String ACCEPT_REQUEST_URL = "https://findproexpertcom.000webhostapp.com/accept_request.php";
     private Context context;
     private String[] request;
+    private String[] cust_name;
     private String username;
-
-    public ViewRequestAdapter(Context context,String[] request) {
+//
+    public ViewRequestAdapter(Context context,String[] request, String[] cust_name) {
         super(context, R.layout.activity_view_request_adapter,request);
         this.context = context;
+        this.cust_name=cust_name;
         this.request=request;
     }
+//    public ViewRequestAdapter(Context context,String[] request) {
+//        super(context, R.layout.activity_view_request_adapter,request);
+//        this.context = context;
+//      //  this.cust_name=cust_name;
+//        this.request=request;
+//    }
     private class ViewHolder {
         TextView name1;
+        TextView cust_name1;
         Button accept;
     }
 
@@ -61,7 +70,7 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
                     .inflate(R.layout.activity_view_request_adapter, parent, false);
             holder.name1 = (TextView) convertView.findViewById(R.id.prof_desc);
             holder.accept=(Button)convertView.findViewById(R.id.req_accept);
-
+            holder.cust_name1 = (TextView) convertView.findViewById(R.id.cust_name);
             convertView.setTag(holder);
 
             convertView.setTag(holder);
@@ -70,6 +79,7 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
         }
 
         holder.name1.setText("" + request[position]);
+        holder.cust_name1.setText(""+cust_name[position]);
 
         holder.accept.setOnClickListener(new View.OnClickListener() {
             @Override
