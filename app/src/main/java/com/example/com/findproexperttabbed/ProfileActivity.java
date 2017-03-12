@@ -92,7 +92,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
     public void placeSkillRequest() {
 //        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-//        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+//  //      final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
 
         StringRequest stringRequest1 = new StringRequest(Request.Method.POST, VIEW_PROFILESKILL_URL,
                 new Response.Listener<String>() {
