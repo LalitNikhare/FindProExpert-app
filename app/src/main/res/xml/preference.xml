@@ -6,8 +6,13 @@
             android:title="Profile" >
             <intent
                 android:action="android.intent.action.VIEW"
+
                 android:targetClass="com.example.com.findproexperttabbed.ProfileActivity"
-                android:targetPackage="com.example.com.findproexperttabbed" />
+                android:targetPackage="com.example.com.findproexperttabbed" >
+                <extra android:name="view"
+                    android:value="profile"/>
+            </intent>
+
             </Preference>
 
         <Preference

@@ -2,6 +2,7 @@ package com.example.com.findproexperttabbed;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +25,8 @@ public class ProfileActivity extends AppCompatActivity {
     TextView user_profile_name,text_view_mobno,text_view_email,text_view_skills,user_profile_username;
     ProgressDialog progDiag;
     private static final String USERNAME = "username";
-
+    String username_default;
+    boolean flag_profile=false;
    // public static final String  = "https://findproexpertcom.000webhostapp.com/profile_data_fetch.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +41,24 @@ public class ProfileActivity extends AppCompatActivity {
         text_view_skills=(TextView)findViewById(R.id.text_view_skills);
         user_profile_username=(TextView)findViewById(R.id.user_profile_username);
 
+        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        username_default= sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+
+        Intent intent=getIntent();
+        if(intent!=null){
+            String str=intent.getStringExtra("view");
+            if(str.equals("view")){
+                flag_profile=true;
+                username_default=intent.getStringExtra("username");
+            }
+        }
+
         placeDetailRequest();
 
     }
 
     public void placeDetailRequest() {
-        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, VIEW_PROFILE_URL,
                 new Response.Listener<String>() {
                     @Override
@@ -64,7 +77,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 HashMap<String ,String> params=new HashMap<String, String>();
-                params.put("username",username);
+                params.put("username",username_default);
                 return params;
             }
 
@@ -78,8 +91,9 @@ public class ProfileActivity extends AppCompatActivity {
 //        progDiag.show();
     }
     public void placeSkillRequest() {
-        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+//        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+//        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+
         StringRequest stringRequest1 = new StringRequest(Request.Method.POST, VIEW_PROFILESKILL_URL,
                 new Response.Listener<String>() {
                     @Override
@@ -98,7 +112,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 HashMap<String ,String> params=new HashMap<String, String>();
-                params.put("username",username);
+                params.put("username",username_default);
                 return params;
             }
 
@@ -113,8 +127,8 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void setDetails(String response) {
-        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+//        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+//        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
 
         JSONProfessional jsonProfessional=new JSONProfessional(response);
         jsonProfessional.parseJSONforProfileDetails();

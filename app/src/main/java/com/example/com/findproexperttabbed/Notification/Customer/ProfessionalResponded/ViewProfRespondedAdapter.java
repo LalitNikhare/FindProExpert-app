@@ -1,6 +1,7 @@
 package com.example.com.findproexperttabbed.Notification.Customer.ProfessionalResponded;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.com.findproexperttabbed.Config;
 import com.example.com.findproexperttabbed.JSONNotification;
+import com.example.com.findproexperttabbed.ProfileActivity;
 import com.example.com.findproexperttabbed.R;
 
 import java.util.HashMap;
@@ -88,6 +90,11 @@ public class ViewProfRespondedAdapter extends ArrayAdapter<String> {
             holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    String str_username=JSONNotification.prof_username[position];
+                    Intent intent=new Intent(getContext(), ProfileActivity.class);
+                    intent.putExtra("username",str_username);
+                    intent.putExtra("view","view");
+                    getContext().startActivity(intent);
                     Toast.makeText(getContext(),"Fetching Profile Contents",Toast.LENGTH_SHORT).show();
                 }
             });
