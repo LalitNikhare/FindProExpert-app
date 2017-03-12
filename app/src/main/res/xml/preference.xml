@@ -21,15 +21,20 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetClass="com.example.com.findproexperttabbed.BecomeAProActivity"
-                android:targetPackage="com.example.com.findproexperttabbed" />
+                android:targetPackage="com.example.com.findproexperttabbed"
+                />
         </Preference>
 
 
     </PreferenceCategory>
     <PreferenceCategory android:title="Account Settings">
         <EditTextPreference
+            android:key="@string/tag_name"
+            android:id="@+id/pass_change"
             android:summary="Change Your Password"
-            android:title="Password" />
+            android:title="Password"
+            android:hint="New Password"
+            />
     </PreferenceCategory>
 
 </PreferenceScreen>

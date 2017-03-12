@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -23,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.com.findproexperttabbed.Config;
 import com.example.com.findproexperttabbed.HomeScreen.Customer.CustomerView;
@@ -43,7 +45,9 @@ public class HomeScreen extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    FloatingActionButton fab;
+    //FloatingActionButton fab;
+
+
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -54,7 +58,7 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        //fab=(FloatingActionButton)findViewById(R.id.fabNotification);
+
         SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
 
@@ -71,19 +75,12 @@ public class HomeScreen extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent in=new Intent(HomeScreen.this, NotificationHomeActivity.class);
-//                startActivity(in);
-//            }
-//        });
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabNotification);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+
                 Intent in=new Intent(HomeScreen.this, NotificationHomeActivity.class);
                 startActivity(in);
             }
@@ -161,6 +158,7 @@ public class HomeScreen extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home_screen, menu);
+
         return true;
     }
 
@@ -170,8 +168,7 @@ public class HomeScreen extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
+                //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent settingsIntent=new Intent(HomeScreen.this,SettingsPref.class);
             startActivity(settingsIntent);
@@ -190,6 +187,8 @@ public class HomeScreen extends AppCompatActivity {
 
             return true;
         }
+
+
 
         return super.onOptionsItemSelected(item);
     }
