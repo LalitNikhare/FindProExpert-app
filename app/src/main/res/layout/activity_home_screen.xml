@@ -42,13 +42,13 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabNotification"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|left"
         android:layout_margin="16dp"
         android:layout_marginTop="00dp"
         android:clickable="true"
-        app:fabSize="mini"
+        app:fabSize="normal"
         app:layout_anchor="@+id/container"
         app:layout_anchorGravity="bottom|right|center_vertical"
         app:srcCompat="@drawable/fabnotificationicon" />
