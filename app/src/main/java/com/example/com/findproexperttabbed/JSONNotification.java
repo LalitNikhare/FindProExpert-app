@@ -24,6 +24,7 @@ public class JSONNotification {
 
     public static int[] request_id;
     public static String[] request;
+    public static String[] request_prof;
     public static  int[] accept;
     public static String[] prof_username;
     public static String[] cust_username;
@@ -66,7 +67,7 @@ public class JSONNotification {
 
             jsonObject = new JSONObject(json);
             users = jsonObject.getJSONArray(JSON_ARRAY1);
-            request = new String[users.length()];
+            request_prof = new String[users.length()];
             fname=new String[users.length()];
             lname=new String[users.length()];
             cust_username=new String[users.length()];
@@ -74,7 +75,7 @@ public class JSONNotification {
 
             for (int i = 0; i < users.length(); i++) {
                 JSONObject jo = users.getJSONObject(i);
-                request[i] = jo.getString(KEY_REQUEST_STR);
+                request_prof[i] = jo.getString(KEY_REQUEST_STR);
                 fname[i]=jo.getString(KEY_FNAME);
                 lname[i]=jo.getString(KEY_LNAME);
                 cust_username[i]=jo.getString(KEY_CUST_USERNAME);
@@ -90,7 +91,6 @@ public class JSONNotification {
 
             jsonObject = new JSONObject(json);
             users = jsonObject.getJSONArray(JSON_ARRAY1);
-           // request = new String[users.length()];
             prof_username = new String[users.length()];
             fname = new String[users.length()];
             lname=new String[users.length()];
@@ -100,7 +100,6 @@ public class JSONNotification {
                 prof_username[i] = jo.getString(KEY_USERNAME);
                 fname[i] = (jo.getString(KEY_FNAME));
                 lname[i]=(jo.getString(KEY_LNAME));
-                //request[i] = jo.getString(KEY_REQUEST_STR);
             }
         } catch (JSONException e) {
             Log.d("Error", "Bug in JSONProfessional");

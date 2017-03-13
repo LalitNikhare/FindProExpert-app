@@ -42,6 +42,8 @@ public class CustomerNotification extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_customer_notification, container, false);
         pro_list = (ListView) view.findViewById(R.id.notification_cutomer_list);
+
+
         sendRequest();
 
         pro_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -69,7 +71,8 @@ public class CustomerNotification extends Fragment {
 //                        Toast.makeText(getActivity().getApplicationContext(), "Reached onResponse()" + response, Toast.LENGTH_SHORT).show();
                         try{
                             showJSON(response);
-                            Toast.makeText(getActivity(),""+response,Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getActivity(),""+response,Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getActivity(),""+JSONNotification.request.length,Toast.LENGTH_SHORT).show();
                         }catch(Exception e){
 
                         }
@@ -101,6 +104,7 @@ public class CustomerNotification extends Fragment {
     private void showJSON(String json) {
         JSONNotification jsonNotification=new JSONNotification(json);
         jsonNotification.parseJSONforCustNot();
+//        Toast.makeText(getActivity(),""+JSONNotification.request.length,Toast.LENGTH_SHORT).show();
         try {
            NotForCustAdapter notForCustAdapter=new NotForCustAdapter(getActivity(),JSONNotification.request,JSONNotification.accept);
             pro_list.setAdapter(notForCustAdapter);

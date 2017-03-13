@@ -28,22 +28,23 @@ public class ViewProfessionalResponded extends AppCompatActivity {
     private static final String FETCH_PROF_RESPONDED = "https://findproexpertcom.000webhostapp.com/fetch_prof_responded.php";
     ListView mylist;
     ProgressDialog progressDialog;
-    int req_id,index;
+    int req_id, index;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_professional_responded);
-        mylist= (ListView) findViewById(R.id.view_prof_responded_list);
+        mylist = (ListView) findViewById(R.id.view_prof_responded_list);
 
-        Intent intent=getIntent();
-        req_id=intent.getIntExtra("request_id",-1);
-        index=intent.getIntExtra("index1",-1);
+        Intent intent = getIntent();
+        req_id = intent.getIntExtra("request_id", -1);
+        index = intent.getIntExtra("index1", -1);
         fetch_prof_responded();
         //mylist.setChoiceMode(android.R.layout.simple_list_item_multiple_choice);
         mylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(ViewProfessionalResponded.this,""+JSONNotification.prof_username[position],Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewProfessionalResponded.this, "" + JSONNotification.prof_username[position], Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -55,10 +56,11 @@ public class ViewProfessionalResponded extends AppCompatActivity {
                     public void onResponse(String response) {
 
 //                        Toast.makeText(getActivity().getApplicationContext(), "Reached onResponse()" + response, Toast.LENGTH_SHORT).show();
-                        try{
+                        try {
                             processJSON(response);
-                            Toast.makeText(ViewProfessionalResponded.this,""+response,Toast.LENGTH_SHORT).show();
-                        }catch(Exception e){
+//                            Toast.makeText(ViewProfessionalResponded.this,""+response,Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(ViewProfessionalResponded.this,""+JSONNotification.request.length,Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
 
                         }
                         progressDialog.dismiss();
@@ -69,11 +71,11 @@ public class ViewProfessionalResponded extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
 //                        Toast.makeText(getActivity().getApplicationContext(), "Error in network " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
-                }){
+                }) {
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params=new HashMap<String,String>();
+                Map<String, String> params = new HashMap<String, String>();
                 params.put("requestid", String.valueOf(req_id));
                 return params;
             }
@@ -87,10 +89,10 @@ public class ViewProfessionalResponded extends AppCompatActivity {
     }
 
     private void processJSON(String response) {
-        JSONNotification jsonNotification=new JSONNotification(response);
+        JSONNotification jsonNotification = new JSONNotification(response);
         jsonNotification.parseForProfessionalResponded();
         //in adapter we send the list of names and the effecieny criteria and also the request_id
-        ViewProfRespondedAdapter respondedAdapter=new ViewProfRespondedAdapter(ViewProfessionalResponded.this,JSONNotification.fname,JSONNotification.lname,req_id,index);
+        ViewProfRespondedAdapter respondedAdapter = new ViewProfRespondedAdapter(ViewProfessionalResponded.this, JSONNotification.fname, JSONNotification.lname, req_id, index);
         mylist.setAdapter(respondedAdapter);
     }
 }

@@ -82,6 +82,7 @@ public class ViewProfRespondedAdapter extends ArrayAdapter<String> {
             holder.accept.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     acceptProfessional(position);
                     Toast.makeText(getContext(),"You Accepted this Professional",Toast.LENGTH_SHORT).show();
                 }

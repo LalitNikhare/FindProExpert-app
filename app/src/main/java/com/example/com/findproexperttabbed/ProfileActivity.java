@@ -98,7 +98,7 @@ public class ProfileActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response1) {
-                        Toast.makeText(ProfileActivity.this, response1, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(ProfileActivity.this, response1, Toast.LENGTH_LONG).show();
                         setSkills(response1);
                         //progDiag.dismiss();
                     }

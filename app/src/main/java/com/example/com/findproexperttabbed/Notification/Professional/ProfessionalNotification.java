@@ -103,7 +103,7 @@ public class ProfessionalNotification extends Fragment {
         JSONNotification jsonNotification=new JSONNotification(json);
         jsonNotification.parseJSONforProfNot();
         try {
-            NotForProfAdapter notForProfAdapter=new NotForProfAdapter(getActivity(),JSONNotification.fname,JSONNotification.lname,JSONNotification.request);
+            NotForProfAdapter notForProfAdapter=new NotForProfAdapter(getActivity(),JSONNotification.fname,JSONNotification.lname,JSONNotification.request_prof);
             pro_list.setAdapter(notForProfAdapter);
         } catch (Exception e) {
             Log.d("Error", "Error in HomeActivity customer fragment custom adapter");
