@@ -1,5 +1,6 @@
 package com.example.com.findproexperttabbed.HomeScreen.Professional.ViewRequests;
 
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.widget.ArrayAdapter;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +41,7 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
     private String[] request;
     private String[] cust_name;
     private String username;
+    String price1;
 //
     public ViewRequestAdapter(Context context,String[] request, String[] cust_name) {
         super(context, R.layout.activity_view_request_adapter,request);
@@ -46,12 +49,6 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
         this.cust_name=cust_name;
         this.request=request;
     }
-//    public ViewRequestAdapter(Context context,String[] request) {
-//        super(context, R.layout.activity_view_request_adapter,request);
-//        this.context = context;
-//      //  this.cust_name=cust_name;
-//        this.request=request;
-//    }
     private class ViewHolder {
         TextView name1;
         TextView cust_name1;
@@ -85,16 +82,46 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
         holder.accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                fetchRequests(position);
+                dialogBasePrice(position);
                 //Toast.makeText(getContext(),""+JSONProfessional.srno[position]+""+ JSONProfessional.view_request[position],Toast.LENGTH_SHORT).show();
             }
         });
-
-
         return convertView;
     }
+
+    private void dialogBasePrice(final int position) {
+        final Dialog dialog=new Dialog(getContext());
+        dialog.setContentView(R.layout.dialog_for_base_price);
+
+        final EditText price;
+        Button specify, cancel;
+
+        specify= (Button) dialog.findViewById(R.id.dialog2_specify);
+        cancel= (Button) dialog.findViewById(R.id.dialog2_cancel);
+        price= (EditText) dialog.findViewById(R.id.dialog2_base_price);
+
+        specify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                price1=price.getText().toString().trim();
+                //call to placeRequest()
+                fetchRequests(position);
+                Toast.makeText(getContext(),"Request confirmed",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Request cancelled",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        dialog.setTitle("Place Request");
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
     private void fetchRequests(final int position){
         SharedPreferences sharedPreferences = getContext().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
@@ -116,9 +143,9 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
                 HashMap<String ,String> params=new HashMap<String, String>();
                 params.put(SERIAL_NO,String.valueOf(JSONProfessional.srno[position]));
                 params.put(USERNAME,username);
+                params.put("price",price1);
                 return params;
             }
-
         };
 
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());

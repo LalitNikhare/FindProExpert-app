@@ -33,7 +33,7 @@ android:weightSum="1">
         android:layout_height="wrap_content"
         android:id="@+id/profession_desc"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="12dp"
         android:textSize="16sp" />
 
     <LinearLayout
@@ -41,22 +41,22 @@ android:weightSum="1">
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:text="Workers Available : "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView8"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="2dp" />
+        <!--<TextView-->
+            <!--android:text="Workers Available : "-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/textView8"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="2dp" />-->
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/worker_count"
-            android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="2dp" />
+        <!--<TextView-->
+            <!--android:text="TextView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/worker_count"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="2dp" />-->
     </LinearLayout>
 
 </LinearLayout>

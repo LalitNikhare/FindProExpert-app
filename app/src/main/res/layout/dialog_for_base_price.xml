@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Enter Base Price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/dialog2_base_price" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="Specify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialog2_specify"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialog2_cancel"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

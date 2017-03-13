@@ -22,6 +22,9 @@ public class JSONNotification {
     private static final String KEY_DOMAIN = "profession_name";
     private static final String KEY_CUST_USERNAME = "cust_username";
     private static final String KEY_PROF_USERNAME = "prof_username";
+    private static final String KEY_PRICE = "price";
+    private static final String KEY_JOB_ACCEPTED = "job_accepted";
+    private static final String KEY_JOB_DONE = "job_done";
 
     public static int[] request_id;
     public static String[] request;
@@ -32,6 +35,9 @@ public class JSONNotification {
     public static String[] fname;
     public static String[] lname;
     public static String[] domain;
+    public static String[] price;
+    public static int[] job_done;
+    public static int[] job_accepted;
     private JSONArray users = null;
     private String json;
 
@@ -93,11 +99,17 @@ public class JSONNotification {
             jsonObject = new JSONObject(json);
             users = jsonObject.getJSONArray(JSON_ARRAY1);
             prof_username = new String[users.length()];
+            price=new String[users.length()];
             fname = new String[users.length()];
             lname=new String[users.length()];
+            job_done=new int[users.length()];
+            job_accepted=new int[users.length()];
 
             for (int i = 0; i < users.length(); i++) {
                 JSONObject jo = users.getJSONObject(i);
+                job_accepted[i]=jo.getInt(KEY_JOB_ACCEPTED);
+                job_done[i]=jo.getInt(KEY_JOB_DONE);
+                price[i]=String.valueOf(jo.getInt(KEY_PRICE));
                 prof_username[i] = jo.getString(KEY_USERNAME);
                 fname[i] = (jo.getString(KEY_FNAME));
                 lname[i]=(jo.getString(KEY_LNAME));

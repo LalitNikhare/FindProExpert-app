@@ -60,7 +60,7 @@ public class FeedBack extends AppCompatActivity {
 
 //                        Toast.makeText(getActivity().getApplicationContext(), "Reached onResponse()" + response, Toast.LENGTH_SHORT).show();
                         try{
-                            Toast.makeText(FeedBack.this,""+response,Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(FeedBack.this,""+response,Toast.LENGTH_SHORT).show();
                             showJSON(response);
 
                         }catch(Exception e){

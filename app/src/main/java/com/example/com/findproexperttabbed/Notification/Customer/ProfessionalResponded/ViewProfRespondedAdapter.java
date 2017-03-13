@@ -34,22 +34,27 @@ public class ViewProfRespondedAdapter extends ArrayAdapter<String> {
     private static final String DOMAIN = "profession_name";
     private String[] fname;
     private String[] lname;
-    //private String[] effeciency;
+    private int[] job_done;
+    private int[] job_accepted;
+    private String[] price;
     private int request_id,index;
     private Context context;
     String cust_username,prof_username;
 
-    public ViewProfRespondedAdapter( Context context,  String[] fname,String[] lname,int request_id,int index) {
+    public ViewProfRespondedAdapter( Context context,  String[] fname,String[] lname,int request_id,int index,String[] price,int[] job_done,int[] job_accepted) {
         super(context, R.layout.activity_view_prof_responded_adapter, fname);
         this.context=context;
         this.fname=fname;
         this.lname=lname;
         this.request_id=request_id;
         this.index=index;
+        this.price=price;
+        this.job_done=job_done;
+        this.job_accepted=job_accepted;
         //this.effeciency=effeciency;
     }
     private class ViewHolder {
-        TextView name1, effeciency1;
+        TextView name1, price1,eff1;
         Button accept,view;
     }
     @Override
@@ -64,9 +69,10 @@ public class ViewProfRespondedAdapter extends ArrayAdapter<String> {
             convertView = inflater
                     .inflate(R.layout.activity_view_prof_responded_adapter, parent, false);
             holder.name1 = (TextView) convertView.findViewById(R.id.view_prof_res_name);
-            holder.effeciency1= (TextView) convertView.findViewById(R.id.view_prof_res_eff);
+            holder.price1= (TextView) convertView.findViewById(R.id.view_prof_res_price);
             holder.accept= (Button) convertView.findViewById(R.id.view_prof_res_accept);
             holder.view= (Button) convertView.findViewById(R.id.view_prof_res_view_prof);
+            holder.eff1= (TextView) convertView.findViewById(R.id.view_prof_res_eff);
 
             convertView.setTag(holder);
 
@@ -77,14 +83,15 @@ public class ViewProfRespondedAdapter extends ArrayAdapter<String> {
 
         try{
             holder.name1.setText("" + fname[position]+" "+lname[position]);
-            //holder.effeciency1.setText("" + effeciency[position]);
+            holder.price1.setText("Base Price :Rs. " + price[position]+"");
+            holder.eff1.setText(""+job_done[position]+"/"+job_accepted[position]+" efficiency");
 
             holder.accept.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     acceptProfessional(position);
-                    Toast.makeText(getContext(),"You Accepted this Professional",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"You Accepted this Professional",Toast.LENGTH_SHORT).show();
                 }
             });
 

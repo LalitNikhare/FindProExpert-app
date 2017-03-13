@@ -121,11 +121,6 @@ public class CustomerView extends Fragment {
     private void showJSON(String json) {
         JSONProfessional pj = new JSONProfessional(json);
         pj.parseJSONforProfessional();
-//        Toast.makeText(getActivity().getApplicationContext(), "No of objects :" + pj.worker.length, Toast.LENGTH_LONG).show();
-//        for (int i = 0; i < pj.worker.length; i++) {//Chances of error here
-//            Toast.makeText(getActivity().getApplicationContext(), i + " Name: " + JSONProfessional.names[i] + "Desc: " + pj.desc[i] + "No. of workers: " + pj.worker[i], Toast.LENGTH_SHORT).show();
-//        }
-
         try {
             SeeProfessions cl = new SeeProfessions(getActivity(),image, JSONProfessional.names, JSONProfessional.desc, JSONProfessional.worker);
             pro_list.setAdapter(cl);

@@ -111,7 +111,8 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="JobsDone or Rating: Bohot Sare Jobs Done" />
+                android:id="@+id/eff"
+                android:text="" />
 
             <TextView
                 android:id="@+id/text_view_mobno"

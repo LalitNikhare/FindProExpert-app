@@ -26,7 +26,7 @@ public class SeeProfessions extends ArrayAdapter<String> {
         this.context = context;
         this.desc = desc;
         this.names = names;
-        this.worker = worker;
+        //this.worker = worker;
         this.image=image;
     }
 
@@ -48,7 +48,7 @@ public class SeeProfessions extends ArrayAdapter<String> {
                     .inflate(R.layout.profession_custom_list, parent, false);
             holder.name1 = (TextView) convertView.findViewById(R.id.profession_name);
             holder.desc1 = (TextView) convertView.findViewById(R.id.profession_desc);
-            holder.worker1 = (TextView) convertView.findViewById(R.id.worker_count);
+           // holder.worker1 = (TextView) convertView.findViewById(R.id.worker_count);
             holder.img= (ImageView) convertView.findViewById(R.id.profession_image);
             convertView.setTag(holder);
 
@@ -59,7 +59,7 @@ public class SeeProfessions extends ArrayAdapter<String> {
         holder.img.setImageResource(image[position]);
         holder.name1.setText("" + names[position]);
         holder.desc1.setText("" + desc[position]);
-        holder.worker1.setText("" + worker[position]);
+        //holder.worker1.setText("" + worker[position]);
 
 
         return convertView;

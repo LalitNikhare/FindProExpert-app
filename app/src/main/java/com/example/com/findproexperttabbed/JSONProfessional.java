@@ -24,6 +24,8 @@ public class JSONProfessional {
     public static int[] request;
     public static int[] srno;
     public static String[] cust_username;
+    public static int job_done;
+    public static int job_accepted;
 
     public static String profile_fname;
     public static String profile_lname;
@@ -38,6 +40,8 @@ public class JSONProfessional {
     public static final String KEY_WORKER = "worker";
     public static final String KEY_REQUEST = "request";
     public static final String KEY_VIEW_REQUEST = "view_request";
+    private static final String KEY_JOB_ACCEPTED = "job_accepted";
+    private static final String KEY_JOB_DONE = "job_done";
     //public static  final String JSON_ARRAY_PROF="result2";
 
     private JSONArray users = null;
@@ -128,6 +132,7 @@ public class JSONProfessional {
 
             jsonObject = new JSONObject(json);
             users = jsonObject.getJSONArray(JSON_ARRAY);
+
             //view_request = new String[users.length()];
             //srno=new int[users.length()];
 
@@ -135,6 +140,8 @@ public class JSONProfessional {
                 JSONObject jo = users.getJSONObject(i);
                 //view_request_prof[i] = jo.getString(KEY_VIEW_REQUEST);
                 //srno[i]= Integer.parseInt(jo.getString(KEY_SRNO));
+                job_done=jo.getInt("job_done");
+                job_accepted=jo.getInt("job_accepted");
                 profile_fname= jo.getString("first_name");
                 profile_lname= jo.getString("last_name");
                 profile_email= jo.getString("email");

@@ -55,13 +55,10 @@ public class ViewProfessionalResponded extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-//                        Toast.makeText(getActivity().getApplicationContext(), "Reached onResponse()" + response, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ViewProfessionalResponded.this, ""+ response, Toast.LENGTH_SHORT).show();
                         try {
-                            processJSON(response);
-//                            Toast.makeText(ViewProfessionalResponded.this,""+response,Toast.LENGTH_SHORT).show();
-//                            Toast.makeText(ViewProfessionalResponded.this,""+JSONNotification.request.length,Toast.LENGTH_SHORT).show();
+                            processJSON(response);//
                         } catch (Exception e) {
-
                         }
                         progressDialog.dismiss();
                     }
@@ -91,8 +88,7 @@ public class ViewProfessionalResponded extends AppCompatActivity {
     private void processJSON(String response) {
         JSONNotification jsonNotification = new JSONNotification(response);
         jsonNotification.parseForProfessionalResponded();
-        //in adapter we send the list of names and the effecieny criteria and also the request_id
-        ViewProfRespondedAdapter respondedAdapter = new ViewProfRespondedAdapter(ViewProfessionalResponded.this, JSONNotification.fname, JSONNotification.lname, req_id, index);
+        ViewProfRespondedAdapter respondedAdapter = new ViewProfRespondedAdapter(ViewProfessionalResponded.this, JSONNotification.fname, JSONNotification.lname, req_id, index,JSONNotification.price,JSONNotification.job_done,JSONNotification.job_accepted);
         mylist.setAdapter(respondedAdapter);
     }
 }
