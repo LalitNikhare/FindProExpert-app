@@ -44,6 +44,7 @@ public class FeedBack extends AppCompatActivity {
                 String prof_username=JSONNotification.prof_username[position];
                 Intent intent=new Intent(FeedBack.this,FeedBackPage.class);
                 intent.putExtra("username",prof_username);
+                intent.putExtra("position",position);
                 startActivity(intent);
             }
         });

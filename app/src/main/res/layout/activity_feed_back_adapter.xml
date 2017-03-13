@@ -12,29 +12,29 @@
     tools:context="com.example.com.findproexperttabbed.Notification.Professional.NotForProfAdapter">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:weightSum="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.01">
+            android:layout_weight="1.01"
+            android:orientation="vertical">
 
             <TextView
-                android:text="TextView"
+                android:id="@+id/feed_prof_name"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/feed_prof_name" />
+                android:text="TextView" />
 
             <TextView
-                android:text="TextView"
+                android:id="@+id/feed_request"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/feed_request" />
+                android:text="TextView" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
