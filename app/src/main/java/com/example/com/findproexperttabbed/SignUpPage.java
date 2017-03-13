@@ -158,7 +158,7 @@ public class SignUpPage extends AppCompatActivity {
         Pattern pattern;
         Matcher matcher;
         regex = "^(.+)@(.+)$";
-//        regex="^[\\\\w-_\\\\.+]*[\\\\w-_\\\\.]\\\\@([\\\\w]+\\\\.)+[\\\\w]+[\\\\w]$";
+//     /   regex="^[\\\\w-_\\\\.+]*[\\\\w-_\\\\.]\\\\@([\\\\w]+\\\\.)+[\\\\w]+[\\\\w]$";
         pattern = Pattern.compile(regex,Pattern.CASE_INSENSITIVE);
         matcher = pattern.matcher(emails);
         if (fnames.equals("") || lnames.equals("") || adds.equals("") || emails.equals("") || dobs.equals("") || mobiles.equals("") || users.equals("") || pass1s.equals("") || pass2s.equals("")) {
