@@ -20,6 +20,7 @@ public class JSONNotification {
     private static final String KEY_LNAME = "last_name";
     private static final String KEY_DOMAIN = "profession_name";
     private static final String KEY_CUST_USERNAME = "cust_username";
+    private static final String KEY_PROF_USERNAME = "prof_username";
 
     public static int[] request_id;
     public static String[] request;
@@ -89,6 +90,7 @@ public class JSONNotification {
 
             jsonObject = new JSONObject(json);
             users = jsonObject.getJSONArray(JSON_ARRAY1);
+           // request = new String[users.length()];
             prof_username = new String[users.length()];
             fname = new String[users.length()];
             lname=new String[users.length()];
@@ -98,6 +100,31 @@ public class JSONNotification {
                 prof_username[i] = jo.getString(KEY_USERNAME);
                 fname[i] = (jo.getString(KEY_FNAME));
                 lname[i]=(jo.getString(KEY_LNAME));
+                //request[i] = jo.getString(KEY_REQUEST_STR);
+            }
+        } catch (JSONException e) {
+            Log.d("Error", "Bug in JSONProfessional");
+            e.printStackTrace();
+        }
+    }
+    public void parseJSONforFeedBack() {
+        JSONObject jsonObject;
+        try {
+
+            jsonObject = new JSONObject(json);
+
+            users = jsonObject.getJSONArray(JSON_ARRAY1);
+            request = new String[users.length()];
+            fname=new String[users.length()];
+            lname=new String[users.length()];
+            prof_username=new String[users.length()];
+
+            for (int i = 0; i < users.length(); i++) {
+                JSONObject jo = users.getJSONObject(i);
+                request[i] = jo.getString(KEY_REQUEST_STR);
+                fname[i]=jo.getString(KEY_FNAME);
+                lname[i]=jo.getString(KEY_LNAME);
+                prof_username[i]=jo.getString(KEY_PROF_USERNAME);
             }
         } catch (JSONException e) {
             Log.d("Error", "Bug in JSONProfessional");

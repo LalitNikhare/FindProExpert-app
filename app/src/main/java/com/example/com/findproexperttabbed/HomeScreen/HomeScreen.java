@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.com.findproexperttabbed.Config;
+import com.example.com.findproexperttabbed.FeedBack;
 import com.example.com.findproexperttabbed.HomeScreen.Customer.CustomerView;
 import com.example.com.findproexperttabbed.LoginScreen;
 import com.example.com.findproexperttabbed.HomeScreen.Professional.ProfessionalView;
@@ -184,6 +185,12 @@ public class HomeScreen extends AppCompatActivity {
         if (id == R.id.action_notification) {
             Intent notiIntent=new Intent(HomeScreen.this,NotificationHomeActivity.class);
             startActivity(notiIntent);
+
+            return true;
+        }
+        if (id == R.id.action_feedback) {
+            Intent intent=new Intent(HomeScreen.this,FeedBack.class);
+            startActivity(intent);
 
             return true;
         }

@@ -72,7 +72,9 @@
             android:name=".Notification.NotificationHomeActivity"
             android:label="Notifications" />
         <activity android:name=".Notification.Customer.ProfessionalResponded.ViewProfessionalResponded" />
+        <activity android:name=".FeedBack" />
 
+        <activity android:name=".FeedBackPage"></activity>
     </application>
 
 </manifest>

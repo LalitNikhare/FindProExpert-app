@@ -62,7 +62,7 @@ public class NotForProfAdapter extends ArrayAdapter<String> {
             holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String str_username= JSONNotification.prof_username[position];
+                    String str_username= JSONNotification.cust_username[position];
                     Intent intent=new Intent(getContext(), ProfileActivity.class);
                     intent.putExtra("username",str_username);
                     intent.putExtra("view","view");
