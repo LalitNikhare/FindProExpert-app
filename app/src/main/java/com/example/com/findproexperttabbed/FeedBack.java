@@ -95,6 +95,10 @@ public class FeedBack extends AppCompatActivity {
         JSONNotification jsonNotification=new JSONNotification(json);
         jsonNotification.parseJSONforFeedBack();
         try {
+            for(int i=0;i<JSONNotification.request.length;i++)
+            {
+                Toast.makeText(FeedBack.this,""+JSONNotification.request[i],Toast.LENGTH_SHORT).show();
+            }
             FeedBackAdapter feedBackAdapter=new FeedBackAdapter(FeedBack.this,JSONNotification.fname,JSONNotification.lname,JSONNotification.request);
             pro_list.setAdapter(feedBackAdapter);
         } catch (Exception e) {

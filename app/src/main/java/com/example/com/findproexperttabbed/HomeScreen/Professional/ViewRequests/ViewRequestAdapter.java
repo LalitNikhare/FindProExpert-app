@@ -1,6 +1,7 @@
 package com.example.com.findproexperttabbed.HomeScreen.Professional.ViewRequests;
 
 import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.widget.ArrayAdapter;
 
 
@@ -84,6 +85,8 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
         holder.accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 fetchRequests(position);
                 //Toast.makeText(getContext(),""+JSONProfessional.srno[position]+""+ JSONProfessional.view_request[position],Toast.LENGTH_SHORT).show();
             }

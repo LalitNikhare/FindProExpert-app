@@ -38,6 +38,7 @@ public class FeedBackPage extends AppCompatActivity {
         Intent in=getIntent();
         prof_user=in.getStringExtra("username");
         position=in.getIntExtra("position",-1);
+
         yes= (RadioButton) findViewById(R.id.feed_page_yes);
         no= (RadioButton) findViewById(R.id.feed_page_no);
         send_feedback= (Button) findViewById(R.id.send_feedback);
@@ -49,8 +50,6 @@ public class FeedBackPage extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(FeedBackPage.this,"You selected yes",Toast.LENGTH_SHORT).show();
                 value=1;
-
-
             }
         });
         no.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +57,6 @@ public class FeedBackPage extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(FeedBackPage.this,"You selected no",Toast.LENGTH_SHORT).show();
                 value=0;
-
             }
         });
 
@@ -70,18 +68,15 @@ public class FeedBackPage extends AppCompatActivity {
 
             }
         });
-        //feedBackSend();
-
     }
 
-    private void feedBackSend() {
-        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+    public void feedBackSend() {
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, FEEDBACK_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(FeedBackPage.this, response, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FeedBackPage.this, ""+response, Toast.LENGTH_SHORT).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -92,16 +87,16 @@ public class FeedBackPage extends AppCompatActivity {
                 }) {
             @Override
             protected Map<String, String> getParams() {
-                HashMap<String ,String> params=new HashMap<String, String>();
+                Map<String,String> params=new HashMap<String,String>();
                 params.put("username", prof_user);
                 params.put("value",String.valueOf(value));
-
+                params.put("request_id",String.valueOf(JSONNotification.request_id[position]));
                 return params;
             }
 
         };
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        RequestQueue requestQueue = Volley.newRequestQueue(FeedBackPage.this);
         requestQueue.add(stringRequest);
     }
 }

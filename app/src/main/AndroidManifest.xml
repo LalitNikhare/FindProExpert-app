@@ -71,10 +71,13 @@
         <activity
             android:name=".Notification.NotificationHomeActivity"
             android:label="Notifications" />
-        <activity android:name=".Notification.Customer.ProfessionalResponded.ViewProfessionalResponded" />
-        <activity android:name=".FeedBack" />
+        <activity android:name=".Notification.Customer.ProfessionalResponded.ViewProfessionalResponded"
+            android:label="View Responded Professionals"/>
+        <activity android:name=".FeedBack"
+            android:label="FeedBack"/>
 
-        <activity android:name=".FeedBackPage"></activity>
+        <activity android:name=".FeedBackPage"
+            android:label="FeedBack Page"></activity>
     </application>
 
 </manifest>

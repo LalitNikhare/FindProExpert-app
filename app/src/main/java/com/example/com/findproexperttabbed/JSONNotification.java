@@ -1,5 +1,6 @@
 package com.example.com.findproexperttabbed;
 
+import android.content.Intent;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -111,19 +112,20 @@ public class JSONNotification {
         try {
 
             jsonObject = new JSONObject(json);
-
             users = jsonObject.getJSONArray(JSON_ARRAY1);
-            request = new String[users.length()];
-            fname=new String[users.length()];
+            prof_username = new String[users.length()];
+            request=new String[users.length()];
+            request_id=new int[users.length()];
+            fname = new String[users.length()];
             lname=new String[users.length()];
-            prof_username=new String[users.length()];
 
             for (int i = 0; i < users.length(); i++) {
                 JSONObject jo = users.getJSONObject(i);
-                request[i] = jo.getString(KEY_REQUEST_STR);
-                fname[i]=jo.getString(KEY_FNAME);
-                lname[i]=jo.getString(KEY_LNAME);
-                prof_username[i]=jo.getString(KEY_PROF_USERNAME);
+                prof_username[i] = jo.getString(KEY_PROF_USERNAME);
+                fname[i] = (jo.getString(KEY_FNAME));
+                lname[i]=(jo.getString(KEY_LNAME));
+                request[i]=jo.getString(KEY_REQUEST_STR);
+                request_id[i]= Integer.parseInt(jo.getString(KEY_REQUEST_ID));
             }
         } catch (JSONException e) {
             Log.d("Error", "Bug in JSONProfessional");
