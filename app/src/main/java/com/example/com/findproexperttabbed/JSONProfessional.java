@@ -14,6 +14,8 @@ import org.json.JSONObject;
 public class JSONProfessional {
     private static final String KEY_SRNO = "srno";
     private static final String KEY_CUST_USERNAME = "username";
+    public static int[] cust_occ;
+    public static int[] prof_occ;
     public static String[] prof;
     public static String[] desc;
     public static String[] names;
@@ -49,6 +51,27 @@ public class JSONProfessional {
 
     public JSONProfessional(String json) {
         this.json = json;
+    }
+
+    public void parseJSONforLogin()
+    {
+        JSONObject jsonObject;
+        try {
+
+            jsonObject = new JSONObject(json);
+            users = jsonObject.getJSONArray(JSON_ARRAY);
+            cust_occ=new int[users.length()];
+            prof_occ=new int[users.length()];
+
+            for (int i = 0; i < users.length(); i++) {
+                JSONObject jo = users.getJSONObject(i);
+                cust_occ[i]=Integer.parseInt(jo.getString("customer"));
+                prof_occ[i]=Integer.parseInt(jo.getString("worker"));
+            }
+        } catch (JSONException e) {
+            Log.d("Error", "Bug in JSONProfessional");
+            e.printStackTrace();
+        }
     }
 
     public void parseJSONforProfessional() {

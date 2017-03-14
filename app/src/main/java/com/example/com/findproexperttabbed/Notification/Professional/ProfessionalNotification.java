@@ -43,7 +43,16 @@ public class ProfessionalNotification extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_professional_notification, container, false);
         pro_list = (ListView) view.findViewById(R.id.notification_prof_list);
-        sendRequest();
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        final int workeri = sharedPreferences.getInt(Config.USER_0CCP_WORKER,-1);
+        if(workeri!=1){
+            sendRequest();
+        }
+        else
+        {
+            Toast.makeText(getActivity(),"You are not a professional",Toast.LENGTH_SHORT).show();
+        }
 //to be edited
 //        pro_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override

@@ -29,7 +29,7 @@ public class LoginScreen extends AppCompatActivity {
     Button login;
     TextView cancel;
     public boolean loggedIn=false;
-
+    int workeri,customeri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +73,8 @@ public class LoginScreen extends AppCompatActivity {
         //Fetching the boolean value form sharedpreferences
         loggedIn = sharedPreferences.getBoolean(Config.LOGGEDIN_SHARED_PREF, false);
         String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+        workeri=sharedPreferences.getInt(Config.USER_0CCP_WORKER,-1);
+        customeri=sharedPreferences.getInt(Config.USER_0CCP_CUST,-1);
 
         //If we will get true
         if(loggedIn){
@@ -89,22 +91,37 @@ public class LoginScreen extends AppCompatActivity {
         final String username = user.getText().toString().trim();
         final String password = pass.getText().toString().trim();
 
+
         //Creating a string request
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.LOGIN_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //If we are getting success from server
-                        if(response.equals(Config.LOGIN_SUCCESS)){
+                        Toast.makeText(LoginScreen.this,""+response,Toast.LENGTH_SHORT).show();
+                        if(!response.equals("Failed")){
                             //Creating a shared preference
+                            Toast.makeText(LoginScreen.this,""+response,Toast.LENGTH_SHORT).show();
                             SharedPreferences sharedPreferences = LoginScreen.this.getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-
+                            JSONProfessional jsonProfessional=new JSONProfessional(response);
+                            jsonProfessional.parseJSONforLogin();
                             //Creating editor to store values to shared preferences
                             SharedPreferences.Editor editor = sharedPreferences.edit();
+                            workeri=JSONProfessional.cust_occ[0];
+                            customeri=JSONProfessional.prof_occ[0];
+                            Toast.makeText(LoginScreen.this,""+workeri+ " "+customeri,Toast.LENGTH_SHORT).show();
+//                            try{
+//                                workeri=JSONProfessional.cust_occ[0];
+//                                customeri=JSONProfessional.prof_occ[0];
+//                                Toast.makeText(LoginScreen.this,""+workeri+ " "+customeri,Toast.LENGTH_SHORT).show();
+//                            }catch(Exception e){
+//                                e.printStackTrace();
+//                            }
 
                             //Adding values to editor
                             editor.putBoolean(Config.LOGGEDIN_SHARED_PREF, true);
                             editor.putString(Config.USERNAME_SHARED_PREF, username);
+                            editor.putInt(Config.USER_0CCP_CUST,JSONProfessional.cust_occ[0]);
+                            editor.putInt(Config.USER_0CCP_WORKER,JSONProfessional.prof_occ[0]);
 
                             //Saving values to editor
                             editor.commit();

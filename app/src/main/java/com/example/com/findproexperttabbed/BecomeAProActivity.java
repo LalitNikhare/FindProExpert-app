@@ -31,7 +31,7 @@ public class BecomeAProActivity extends AppCompatActivity {
     public int[] index;
     public int len;
     ArrayList<String> profession;
-
+    String[] professions={"Web Development","Application Development","Mobile Development","Photography","Video Editing","Graphics and Animation"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,7 @@ public class BecomeAProActivity extends AppCompatActivity {
         reject = (Button) findViewById(R.id.become_a_pro_reject);
         mylist = (ListView) findViewById(R.id.become_a_pro_list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(BecomeAProActivity.this, android.R.layout.simple_list_item_multiple_choice);
-        adapter.addAll(JSONProfessional.prof);
+        adapter.addAll(professions);
         mylist.setAdapter(adapter);
 //        public void onListItemClick(ListView parent, View v,int position,long id){
 //            CheckedTextView item = (CheckedTextView) v;
@@ -62,7 +62,7 @@ public class BecomeAProActivity extends AppCompatActivity {
 //                    Toast.makeText(BecomeAProActivity.this,""+a.get(i),Toast.LENGTH_SHORT).show();
                 }
                 place_profession();
-                Toast.makeText(BecomeAProActivity.this, "Added Skills Successfully", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(BecomeAProActivity.this, "Added Skills Successfully", Toast.LENGTH_SHORT).show();
 //                for(int i=0;i<len;i++){
 //                    Toast.makeText(BecomeAProActivity.this,"Index Selected:"+index[i],Toast.LENGTH_SHORT).show();
 //                }

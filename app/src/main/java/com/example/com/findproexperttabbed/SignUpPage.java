@@ -36,6 +36,7 @@ public class SignUpPage extends AppCompatActivity {
     String fnames, lnames, adds, emails, dobs, mobiles, users, pass1s, pass2s;
     boolean workerb, customerb;
     int year, month, day;
+    int workeri,customeri;
     Calendar calendar;
 
     public static final String KEY_FNAME = "fname";
@@ -149,6 +150,16 @@ public class SignUpPage extends AppCompatActivity {
         pass1s = pass1.getText().toString().trim();
         pass2s = pass2.getText().toString().trim();
         workerb = worker.isChecked();
+        if(workerb){
+            workeri=1;
+        }else{
+            workeri=0;
+        }
+        if(customerb){
+            customeri=1;
+        }else{
+            customeri=0;
+        }
         customerb = customer.isChecked();
     }
 
@@ -213,6 +224,8 @@ public class SignUpPage extends AppCompatActivity {
                 params.put(KEY_MOBILE,mobiles);
                 params.put(KEY_USER,users);
                 params.put(KEY_PASS,pass1s);
+                params.put("worker",String.valueOf(workerb));
+                params.put("customer",String.valueOf(customerb));
                 return params;
             }
 

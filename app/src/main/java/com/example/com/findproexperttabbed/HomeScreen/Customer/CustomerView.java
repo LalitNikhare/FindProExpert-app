@@ -48,9 +48,16 @@ public class CustomerView extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+       //changes here
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        final int customeri = sharedPreferences.getInt(Config.USER_0CCP_CUST,-1);
         view = inflater.inflate(R.layout.customer_fragment, container, false);
         pro_list = (ListView) view.findViewById(R.id.pro_list1);
-        sendRequest();
+       ///changes here
+        if(customeri!=1)
+            sendRequest();
+        else
+            Toast.makeText(getActivity(),"You are not a Customer",Toast.LENGTH_SHORT).show();
         pro_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

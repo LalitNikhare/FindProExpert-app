@@ -39,12 +39,17 @@ public class CustomerNotification extends Fragment {
     ProgressDialog progressDialog;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        final int customeri = sharedPreferences.getInt(Config.USER_0CCP_CUST,-1);
+        Toast.makeText(getActivity(),""+customeri,Toast.LENGTH_SHORT).show();
         view = inflater.inflate(R.layout.fragment_customer_notification, container, false);
         pro_list = (ListView) view.findViewById(R.id.notification_cutomer_list);
+        if(customeri!=1)
+            sendRequest();
+        else
+            Toast.makeText(getActivity(),"You are not a Customer",Toast.LENGTH_SHORT).show();
 
-
-        sendRequest();
+//        sendRequest();
 
         pro_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
