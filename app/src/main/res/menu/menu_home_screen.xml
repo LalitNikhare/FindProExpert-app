@@ -18,6 +18,11 @@
         android:title="Feedback"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_aboutus"
+        android:orderInCategory="100"
+        android:title="About Us"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_logout"
         android:orderInCategory="100"
         android:title="Logout"

@@ -191,6 +191,15 @@ public class HomeScreen extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        if(id == R.id.action_aboutus){
+            View messageView = getLayoutInflater().inflate(R.layout.aboutus_dialog, null, false);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            //builder.setTitle("about us");
+            builder.setView(messageView);
+            builder.create();
+            builder.show();
+        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="260dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Team Members:-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Amol Bhalmey - 49"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Ketan Takale -53"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. Lalit Nikhare -54"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4. Utkarsh Shende -77"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Team Guide:-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prof. Supriya Thombre"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source Code-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://github.com/LalitNikhare/findproexpert-app"
+        android:autoLink="web"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+
+</LinearLayout>

@@ -16,8 +16,8 @@
             </Preference>
 
         <Preference
-            android:summary="Become a Pro"
-            android:title="Become Pro">
+            android:summary="Add Skills to your skill set"
+            android:title="Add Skills">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetClass="com.example.com.findproexperttabbed.BecomeAProActivity"
