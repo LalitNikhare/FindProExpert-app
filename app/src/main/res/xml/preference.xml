@@ -26,15 +26,15 @@
         </Preference>
 
 
-    </PreferenceCategory>
-    <PreferenceCategory android:title="Account Settings">
-        <EditTextPreference
-            android:key="@string/tag_name"
-            android:id="@+id/pass_change"
-            android:summary="Change Your Password"
-            android:title="Password"
-            android:hint="New Password"
-            />
+    <!--</PreferenceCategory>-->
+    <!--<PreferenceCategory android:title="Account Settings">-->
+        <!--<EditTextPreference-->
+            <!--android:key="@string/tag_name"-->
+            <!--android:id="@+id/pass_change"-->
+            <!--android:summary="Change Your Password"-->
+            <!--android:title="Password"-->
+            <!--android:hint="New Password"-->
+            <!--/>-->
     </PreferenceCategory>
 
 </PreferenceScreen>

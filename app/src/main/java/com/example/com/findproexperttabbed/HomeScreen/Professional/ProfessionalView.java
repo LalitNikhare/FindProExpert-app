@@ -49,7 +49,7 @@ public class ProfessionalView extends Fragment {
         request_list= (ListView) view.findViewById(R.id.request_list2);
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         final int workeri = sharedPreferences.getInt(Config.USER_0CCP_WORKER,-1);
-        if(workeri!=1){
+        if(workeri==1){
             sendRequest();
         }
         else

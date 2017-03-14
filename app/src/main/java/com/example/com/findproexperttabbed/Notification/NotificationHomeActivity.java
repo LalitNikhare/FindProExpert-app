@@ -1,6 +1,8 @@
 package com.example.com.findproexperttabbed.Notification;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +19,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.example.com.findproexperttabbed.Config;
 import com.example.com.findproexperttabbed.HomeScreen.HomeScreen;
 import com.example.com.findproexperttabbed.HomeScreen.Professional.ProfessionalView;
 import com.example.com.findproexperttabbed.Notification.Customer.CustomerNotification;
@@ -39,6 +42,8 @@ public class NotificationHomeActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    int workeri;
+    int customeri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +55,9 @@ public class NotificationHomeActivity extends AppCompatActivity {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
+        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        workeri = sharedPreferences.getInt(Config.USER_0CCP_WORKER,-1);
+        customeri = sharedPreferences.getInt(Config.USER_0CCP_CUST,-1);
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -66,6 +73,7 @@ public class NotificationHomeActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
                 Intent in=new Intent(NotificationHomeActivity.this, HomeScreen.class);
                 startActivity(in);
+                finish();
             }
         });
 
@@ -76,30 +84,8 @@ public class NotificationHomeActivity extends AppCompatActivity {
         super.onBackPressed();
         Intent in=new Intent(NotificationHomeActivity.this, HomeScreen.class);
         startActivity(in);
+        finish();
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_notification_home, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -134,7 +120,6 @@ public class NotificationHomeActivity extends AppCompatActivity {
             return rootView;
         }
     }
-
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -151,9 +136,11 @@ public class NotificationHomeActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch(position){
                 case 0:
-                    return new CustomerNotification();
+                    if(customeri==1)
+                        return new CustomerNotification();
                 case 1:
-                    return new ProfessionalNotification();
+                    if(workeri==1)
+                        return new ProfessionalNotification();
             }
             return null;
             //return PlaceholderFragment.newInstance(position + 1);
@@ -162,16 +149,18 @@ public class NotificationHomeActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 2;
+            return workeri+customeri;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Customer";
+                    if(customeri==1)
+                        return "Customer";
                 case 1:
-                    return "Professional";
+                    if(workeri==1)
+                        return "Professional";
 
             }
             return null;

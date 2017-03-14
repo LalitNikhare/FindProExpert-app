@@ -103,7 +103,10 @@ public class SignUpPage extends AppCompatActivity {
 
                     month = calendar.get(Calendar.MONTH);
                     day = calendar.get(Calendar.DAY_OF_MONTH);
-                    showDate(year, month+1, day);
+
+                                showDate(year, month+1, day);
+
+
                     showDialog(999);
                 }
             }
@@ -134,8 +137,14 @@ public class SignUpPage extends AppCompatActivity {
             };
 
     private void showDate(int year, int month, int day) {
-        dob.setText(new StringBuilder().append(day).append("/")
-                .append(month).append("/").append(year));
+        if(year<calendar.get(Calendar.YEAR))
+//            if(month<=calendar.get(Calendar.MONTH))
+//                if(day<calendar.get(Calendar.DAY_OF_MONTH))
+                {
+                    dob.setText(new StringBuilder().append(day).append("/")
+                            .append(month).append("/").append(year));
+                }
+
     }
 
     public void getValues() {
@@ -170,7 +179,7 @@ public class SignUpPage extends AppCompatActivity {
         Matcher matcher;
         regex = "^(.+)@(.+)$";
 //     /   regex="^[\\\\w-_\\\\.+]*[\\\\w-_\\\\.]\\\\@([\\\\w]+\\\\.)+[\\\\w]+[\\\\w]$";
-        pattern = Pattern.compile(regex,Pattern.CASE_INSENSITIVE);
+        pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",Pattern.CASE_INSENSITIVE);
         matcher = pattern.matcher(emails);
         if (fnames.equals("") || lnames.equals("") || adds.equals("") || emails.equals("") || dobs.equals("") || mobiles.equals("") || users.equals("") || pass1s.equals("") || pass2s.equals("")) {
             Toast.makeText(SignUpPage.this, "Field Left out", Toast.LENGTH_SHORT).show();
@@ -182,7 +191,7 @@ public class SignUpPage extends AppCompatActivity {
             flag = false;
             return flag;
         }
-        if (!matcher.matches()) {
+        if (!matcher.find()) {
             Toast.makeText(SignUpPage.this, "Email not valid", Toast.LENGTH_SHORT).show();
             flag = false;
             return flag;
@@ -197,6 +206,7 @@ public class SignUpPage extends AppCompatActivity {
             flag = false;
             return flag;
         }
+
         return flag;
     }
     public void registerUser(){

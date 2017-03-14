@@ -44,12 +44,7 @@ public class LoginScreen extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                Intent it1=new Intent(LoginScreen.this,HomeScreen.class);
-//                startActivity(it1);
                 login();
-                //finish();
-
             }
         });
 
@@ -100,7 +95,7 @@ public class LoginScreen extends AppCompatActivity {
                         Toast.makeText(LoginScreen.this,""+response,Toast.LENGTH_SHORT).show();
                         if(!response.equals("Failed")){
                             //Creating a shared preference
-                            Toast.makeText(LoginScreen.this,""+response,Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(LoginScreen.this,""+response,Toast.LENGTH_SHORT).show();
                             SharedPreferences sharedPreferences = LoginScreen.this.getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
                             JSONProfessional jsonProfessional=new JSONProfessional(response);
                             jsonProfessional.parseJSONforLogin();
@@ -108,14 +103,7 @@ public class LoginScreen extends AppCompatActivity {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             workeri=JSONProfessional.cust_occ[0];
                             customeri=JSONProfessional.prof_occ[0];
-                            Toast.makeText(LoginScreen.this,""+workeri+ " "+customeri,Toast.LENGTH_SHORT).show();
-//                            try{
-//                                workeri=JSONProfessional.cust_occ[0];
-//                                customeri=JSONProfessional.prof_occ[0];
-//                                Toast.makeText(LoginScreen.this,""+workeri+ " "+customeri,Toast.LENGTH_SHORT).show();
-//                            }catch(Exception e){
-//                                e.printStackTrace();
-//                            }
+//                            Toast.makeText(LoginScreen.this,""+workeri+ " "+customeri,Toast.LENGTH_SHORT).show();
 
                             //Adding values to editor
                             editor.putBoolean(Config.LOGGEDIN_SHARED_PREF, true);

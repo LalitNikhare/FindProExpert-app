@@ -82,8 +82,13 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
         holder.accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialogBasePrice(position);
-                //Toast.makeText(getContext(),""+JSONProfessional.srno[position]+""+ JSONProfessional.view_request[position],Toast.LENGTH_SHORT).show();
+                SharedPreferences sharedPreferences = getContext().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+                final String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+                if(username.equalsIgnoreCase(JSONProfessional.cust_username[position]))
+                    Toast.makeText(getContext(),"Cannot accept the request placed by yourself",Toast.LENGTH_SHORT).show();
+                else{
+                    dialogBasePrice(position);
+                }
             }
         });
         return convertView;
@@ -105,8 +110,13 @@ public class ViewRequestAdapter extends ArrayAdapter<String> {
             public void onClick(View v) {
                 price1=price.getText().toString().trim();
                 //call to placeRequest()
-                fetchRequests(position);
-                Toast.makeText(getContext(),"Request confirmed",Toast.LENGTH_SHORT).show();
+                if(!price1.equals("")){
+                    fetchRequests(position);
+                    Toast.makeText(getContext(),"Request confirmed",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getContext(),"Field cannot be empty",Toast.LENGTH_SHORT).show();
+                }
+
                 dialog.dismiss();
             }
         });

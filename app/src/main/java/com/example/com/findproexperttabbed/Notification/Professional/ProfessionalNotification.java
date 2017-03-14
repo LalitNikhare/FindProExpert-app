@@ -46,7 +46,7 @@ public class ProfessionalNotification extends Fragment {
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         final int workeri = sharedPreferences.getInt(Config.USER_0CCP_WORKER,-1);
-        if(workeri!=1){
+        if(workeri==1){
             sendRequest();
         }
         else
@@ -79,7 +79,7 @@ public class ProfessionalNotification extends Fragment {
 //                        Toast.makeText(getActivity().getApplicationContext(), "Reached onResponse()" + response, Toast.LENGTH_SHORT).show();
                         try{
                             showJSON(response);
-                            Toast.makeText(getActivity(),""+response,Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getActivity(),""+response,Toast.LENGTH_SHORT).show();
                         }catch(Exception e){
 
                         }

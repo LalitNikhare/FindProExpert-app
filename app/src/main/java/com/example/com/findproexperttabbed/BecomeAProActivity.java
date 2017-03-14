@@ -25,29 +25,24 @@ import java.util.Map;
 
 public class BecomeAProActivity extends AppCompatActivity {
     private static final String BECOME_A_PRO_URL = "https://findproexpertcom.000webhostapp.com/becomepro.php";
-    private static final String KEY_PROF = "prof_name";
     private ListView mylist;
     Button add, reject;
-    public int[] index;
-    public int len;
     ArrayList<String> profession;
     String[] professions={"Web Development","Application Development","Mobile Development","Photography","Video Editing","Graphics and Animation"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_become_apro);
+
         add = (Button) findViewById(R.id.become_a_pro_accept);
         reject = (Button) findViewById(R.id.become_a_pro_reject);
+
         mylist = (ListView) findViewById(R.id.become_a_pro_list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(BecomeAProActivity.this, android.R.layout.simple_list_item_multiple_choice);
         adapter.addAll(professions);
         mylist.setAdapter(adapter);
-//        public void onListItemClick(ListView parent, View v,int position,long id){
-//            CheckedTextView item = (CheckedTextView) v;
-//            Toast.makeText(BecomeAProActivity.this, JSONProfessional.prof[position] + " checked : " +
-//                    item.isChecked(), Toast.LENGTH_SHORT).show();
-//        }
         mylist.setChoiceMode(mylist.CHOICE_MODE_MULTIPLE);
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,13 +54,9 @@ public class BecomeAProActivity extends AppCompatActivity {
                         Toast.makeText(BecomeAProActivity.this, "" + mylist.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
                     }
 
-//                    Toast.makeText(BecomeAProActivity.this,""+a.get(i),Toast.LENGTH_SHORT).show();
                 }
                 place_profession();
-                //Toast.makeText(BecomeAProActivity.this, "Added Skills Successfully", Toast.LENGTH_SHORT).show();
-//                for(int i=0;i<len;i++){
-//                    Toast.makeText(BecomeAProActivity.this,"Index Selected:"+index[i],Toast.LENGTH_SHORT).show();
-//                }
+
             }
         });
         reject.setOnClickListener(new View.OnClickListener() {
@@ -77,8 +68,6 @@ public class BecomeAProActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 
     public void place_profession() {
@@ -88,13 +77,13 @@ public class BecomeAProActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(BecomeAProActivity.this, response, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(BecomeAProActivity.this, response, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(BecomeAProActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(BecomeAProActivity.this, error.toString(), Toast.LENGTH_LONG).show();
                     }
                 }) {
             @Override

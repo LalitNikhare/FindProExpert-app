@@ -36,7 +36,13 @@ public class FeedBack extends AppCompatActivity {
         setContentView(R.layout.activity_feed_back);
 
         pro_list = (ListView) findViewById(R.id.feedback_list);
-        sendRequest();
+
+        SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        final int customeri = sharedPreferences.getInt(Config.USER_0CCP_CUST,-1);
+        if(customeri==1)
+            sendRequest();
+        else
+            Toast.makeText(FeedBack.this,"You are not a Customer",Toast.LENGTH_SHORT).show();
 
         pro_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

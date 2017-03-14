@@ -53,11 +53,13 @@ public class CustomerView extends Fragment {
         final int customeri = sharedPreferences.getInt(Config.USER_0CCP_CUST,-1);
         view = inflater.inflate(R.layout.customer_fragment, container, false);
         pro_list = (ListView) view.findViewById(R.id.pro_list1);
-       ///changes here
-        if(customeri!=1)
+
+        ///changes here
+        if(customeri==1)
             sendRequest();
         else
             Toast.makeText(getActivity(),"You are not a Customer",Toast.LENGTH_SHORT).show();
+
         pro_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -79,8 +81,13 @@ public class CustomerView extends Fragment {
                     public void onClick(View v) {
                         request=user_request.getText().toString().trim();
                         //call to placeRequest()
-                        placeRequest();
-                        Toast.makeText(getActivity().getApplicationContext(),"Request confirmed",Toast.LENGTH_SHORT).show();
+                        if(!request.equals("")){
+                            placeRequest();
+                            Toast.makeText(getActivity().getApplicationContext(),"Request confirmed",Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getActivity().getApplicationContext(),"Field is empty",Toast.LENGTH_SHORT).show();
+                        }
+
                         dialog.dismiss();
                     }
                 });
@@ -114,7 +121,7 @@ public class CustomerView extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(getActivity().getApplicationContext(), "Error in network " + error.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "Error in network " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
 

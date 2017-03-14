@@ -4,33 +4,28 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.com.findproexperttabbed.Config;
 import com.example.com.findproexperttabbed.FeedBack;
 import com.example.com.findproexperttabbed.HomeScreen.Customer.CustomerView;
-import com.example.com.findproexperttabbed.LoginScreen;
 import com.example.com.findproexperttabbed.HomeScreen.Professional.ProfessionalView;
+import com.example.com.findproexperttabbed.LoginScreen;
 import com.example.com.findproexperttabbed.Notification.NotificationHomeActivity;
 import com.example.com.findproexperttabbed.R;
 import com.example.com.findproexperttabbed.SettingsPref;
@@ -53,6 +48,8 @@ public class HomeScreen extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+     int workeri;
+     int customeri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +59,8 @@ public class HomeScreen extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         String username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF,"Not Available");
+        workeri = sharedPreferences.getInt(Config.USER_0CCP_WORKER,-1);
+        customeri = sharedPreferences.getInt(Config.USER_0CCP_CUST,-1);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
@@ -84,6 +83,7 @@ public class HomeScreen extends AppCompatActivity {
 
                 Intent in=new Intent(HomeScreen.this, NotificationHomeActivity.class);
                 startActivity(in);
+                finish();
             }
         });
 
@@ -177,8 +177,6 @@ public class HomeScreen extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_logout) {
-//            Intent settingsIntent=new Intent(HomeScreen.this,SettingsPref.class);
-//            startActivity(settingsIntent);
             logout();
             return true;
         }
@@ -191,12 +189,8 @@ public class HomeScreen extends AppCompatActivity {
         if (id == R.id.action_feedback) {
             Intent intent=new Intent(HomeScreen.this,FeedBack.class);
             startActivity(intent);
-
             return true;
         }
-
-
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -250,26 +244,29 @@ public class HomeScreen extends AppCompatActivity {
 
             switch(position){
                 case 0:
-                    return new CustomerView();
+                    if(customeri==1)
+                        return new CustomerView();
                 case 1:
-                    return new ProfessionalView();
+                    if(workeri==1)
+                        return new ProfessionalView();
             }
             return null;
         }
 
         @Override
         public int getCount() {
-
-            return 2;
+            return workeri+customeri;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Customer";
+                    if(customeri==1)
+                        return "Customer";
                 case 1:
-                    return "Professional";
+                    if(workeri==1)
+                        return "Professional";
 
             }
             return null;
