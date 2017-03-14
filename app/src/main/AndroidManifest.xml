@@ -16,7 +16,7 @@
         android:icon="@mipmap/iconapp2"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.Dark">
         <activity
             android:name=".SplashScreen.SplashActivityOpen"
             android:label="FindProExpert"
@@ -46,7 +46,7 @@
         <activity
             android:name=".HomeScreen.HomeScreen"
             android:label="FindProExpert-Home"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.Dark">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -66,7 +66,8 @@
             android:label="Add Skills" />
         <activity
             android:name=".ProfileActivity"
-            android:label="Profile" />
+            android:label="Profile"
+            android:theme="@style/AppTheme.Dark"/>
         <!-- <activity android:name=".ViewRequestAdapter"></activity> -->
         <activity
             android:name=".Notification.NotificationHomeActivity"
